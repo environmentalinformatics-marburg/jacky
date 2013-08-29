@@ -29,6 +29,7 @@
 
 package jacky.util.stations;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -50,7 +51,7 @@ public class Sensor {
 	 * Calibration coefficient(s) of the sensor.
 	 * @uml.property name="calibrationCoefficients"
 	 */
-	private List calibrationCoefficients = new ArrayList<Object>();
+	private List<Float> calibrationCoefficients = new ArrayList<Float>();
 
 	/** 
 	 * Getter of the property <tt>calibrationCoefficients</tt>

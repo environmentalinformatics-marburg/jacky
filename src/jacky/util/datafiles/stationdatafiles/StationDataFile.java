@@ -27,16 +27,19 @@
  * http://environmentalinformatics-marburg.de
  */
 
-package jacky.util.datafiles;
+package jacky.util.datafiles.stationdatafiles;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
+
+import jacky.util.datafiles.DataFile;
 import jacky.util.stations.Station;
 
 /** 
  * @author tnauss
  */
-public class StationDataFile extends DataFile {
+public abstract class StationDataFile extends DataFile implements StationDataFilesToController {
 
 	/**
 	 * 
@@ -48,7 +51,6 @@ public class StationDataFile extends DataFile {
 	 * Date and time of the first data entry of the file.
 	 * @uml.property name="startDateTime"
 	 */
-	private Calendar startDateTime;
 
 	/** 
 	 * Getter of the property <tt>startDateTime</tt>
@@ -56,14 +58,63 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="startDateTime"
 	 */
 	public Calendar getStartDateTime() {
-		return startDateTime;
-	}
+        return startDateTime;
+    }
 
 	/** 
 	 * Date and time of the last data entry in the file.
 	 * @uml.property name="endDateTime"
 	 */
-	private Calendar endDateTime = new java.util.Calendar();
+	private Calendar endDateTime = new Calendar() {
+        
+        @Override
+        public void roll(int field, boolean up) {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public int getMinimum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getMaximum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getLeastMaximum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getGreatestMinimum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        protected void computeTime() {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        protected void computeFields() {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public void add(int field, int amount) {
+            // TODO Auto-generated method stub
+            
+        }
+    };
 
 	/** 
 	 * Getter of the property <tt>endDateTime</tt>
@@ -71,14 +122,78 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="endDateTime"
 	 */
 	public Calendar getEndDateTime() {
-		return endDateTime;
-	}
+        return endDateTime;
+    }
 
 	/** 
 	 * Time zone of the date and time information.
 	 * @uml.property name="timeZone"
 	 */
-	private TimeZone timeZone = new java.util.TimeZone();
+	private TimeZone timeZone = new TimeZone() {
+        
+        @Override
+        public boolean useDaylightTime() {
+            // TODO Auto-generated method stub
+            return false;
+        }
+        
+        @Override
+        public void setRawOffset(int offsetMillis) {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public boolean inDaylightTime(Date date) {
+            // TODO Auto-generated method stub
+            return false;
+        }
+        
+        @Override
+        public int getRawOffset() {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getOffset(int era, int year, int month, int day, int dayOfWeek,
+                int milliseconds) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+    }; {
+        
+        @Override
+        public boolean useDaylightTime() {
+            // TODO Auto-generated method stub
+            return false;
+        }
+        
+        @Override
+        public void setRawOffset(int offsetMillis) {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public boolean inDaylightTime(Date date) {
+            // TODO Auto-generated method stub
+            return false;
+        }
+        
+        @Override
+        public int getRawOffset() {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getOffset(int era, int year, int month, int day, int dayOfWeek,
+                int milliseconds) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+    };
 
 	/** 
 	 * Getter of the property <tt>timeZone</tt>
@@ -86,8 +201,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="timeZone"
 	 */
 	public TimeZone getTimeZone() {
-		return timeZone;
-	}
+        return timeZone;
+    }
 
 	/**
 	 * Time interval of the data entries.
@@ -101,8 +216,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="timeInterval"
 	 */
 	public int getTimeInterval() {
-		return timeInterval;
-	}
+        return timeInterval;
+    }
 
 	/**
 	 * Setter of the property <tt>timeInterval</tt>
@@ -110,8 +225,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="timeInterval"
 	 */
 	public void setTimeInterval(int timeInterval) {
-		this.timeInterval = timeInterval;
-	}
+        this.timeInterval = timeInterval;
+    }
 
 		
 	/**
@@ -147,8 +262,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="processLevel"
 	 */
 	public String getProcessLevel() {
-		return processLevel;
-	}
+        return processLevel;
+    }
 
 	/** 
 	 * Setter of the property <tt>processLevel</tt>
@@ -156,8 +271,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="processLevel"
 	 */
 	public void setProcessLevel(String processLevel) {
-		this.processLevel = processLevel;
-	}
+        this.processLevel = processLevel;
+    }
 	/**
 	 * Identifier of the project within which the data is collected.
 	 * @uml.property  name="projectID"
@@ -170,8 +285,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="projectID"
 	 */
 	public String getProjectID() {
-		return projectID;
-	}
+        return projectID;
+    }
 
 	/**
 	 * Setter of the property <tt>projectID</tt>
@@ -179,8 +294,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="projectID"
 	 */
 	public void setProjectID(String projectID) {
-		this.projectID = projectID;
-	}
+        this.projectID = projectID;
+    }
 
 	/** 
 	 * Setter of the property <tt>endDateTime</tt>
@@ -188,8 +303,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="endDateTime"
 	 */
 	public void setEndDateTime(Calendar endDateTime) {
-		this.endDateTime = endDateTime;
-	}
+        this.endDateTime = endDateTime;
+    }
 
 	/** 
 	 * Setter of the property <tt>startDateTime</tt>
@@ -197,8 +312,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="startDateTime"
 	 */
 	public void setStartDateTime(Calendar startDateTime) {
-		this.startDateTime = startDateTime;
-	}
+        this.startDateTime = startDateTime;
+    }
 
 	/** 
 	 * Setter of the property <tt>timeZone</tt>
@@ -206,8 +321,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="timeZone"
 	 */
 	public void setTimeZone(TimeZone timeZone) {
-		this.timeZone = timeZone;
-	}
+        this.timeZone = timeZone;
+    }
 	/**
 	 * Number of lines of the station data file header.
 	 * @uml.property  name="headerExtension"
@@ -220,8 +335,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="headerExtension"
 	 */
 	public int getHeaderExtension() {
-		return headerExtension;
-	}
+        return headerExtension;
+    }
 
 	/**
 	 * Setter of the property <tt>headerExtension</tt>
@@ -229,31 +344,31 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="headerExtension"
 	 */
 	public void setHeaderExtension(int headerExtension) {
-		this.headerExtension = headerExtension;
-	}
-	/**
-	 * Number of the line which gives the column header information (only relevant for table-style files).
-	 * @uml.property  name="headerLine"
-	 */
+        this.headerExtension = headerExtension;
+    }
+	/** 
+     * Number of the line which gives the column header information (only relevant for table-style files).
+     * @uml.property name="headerLine"
+     */
 	private int headerLine = 0;
 
-	/**
-	 * Getter of the property <tt>headerLine</tt>
-	 * @return  Returns the headerLine.
-	 * @uml.property  name="headerLine"
-	 */
+	/** 
+     * Getter of the property <tt>headerLine</tt>
+     * @return  Returns the headerLine.
+     * @uml.property  name="headerLine"
+     */
 	public int getHeaderLine() {
-		return headerLine;
-	}
+        return headerLine;
+    }
 
-	/**
-	 * Setter of the property <tt>headerLine</tt>
-	 * @param headerLine  The headerLine to set.
-	 * @uml.property  name="headerLine"
-	 */
+	/** 
+     * Setter of the property <tt>headerLine</tt>
+     * @param headerLine  The headerLine to set.
+     * @uml.property  name="headerLine"
+     */
 	public void setHeaderLine(int headerLine) {
-		this.headerLine = headerLine;
-	}
+        this.headerLine = headerLine;
+    }
 	/**
 	 * Number of the first line of data.
 	 * @uml.property  name="firstDataLine"
@@ -266,8 +381,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="firstDataLine"
 	 */
 	public int getFirstDataLine() {
-		return firstDataLine;
-	}
+        return firstDataLine;
+    }
 
 	/**
 	 * Setter of the property <tt>firstDataLine</tt>
@@ -275,8 +390,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="firstDataLine"
 	 */
 	public void setFirstDataLine(int firstDataLine) {
-		this.firstDataLine = firstDataLine;
-	}
+        this.firstDataLine = firstDataLine;
+    }
 	/**
 	 * Additional identifier of the process level which is derived from the file name conventions of some working groups at Marburg University.
 	 * @uml.property  name="processLevelID"
@@ -289,8 +404,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="processLevelID"
 	 */
 	public String getProcessLevelID() {
-		return processLevelID;
-	}
+        return processLevelID;
+    }
 
 	/**
 	 * Setter of the property <tt>processLevelID</tt>
@@ -298,8 +413,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="processLevelID"
 	 */
 	public void setProcessLevelID(String processLevelID) {
-		this.processLevelID = processLevelID;
-	}
+        this.processLevelID = processLevelID;
+    }
 	/** 
 	 * Code for the temporal aggregation (i.e. the temporal resolution) of the data set which also indicates if the present temporal resolution is the original recording interval or if it is aggregated to a lower resolution afterwards.
 	 * @uml.property name="aggregationLevel"
@@ -312,8 +427,8 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="aggregationLevel"
 	 */
 	public String getAggregationLevel() {
-		return aggregationLevel;
-	}
+        return aggregationLevel;
+    }
 
 	/** 
 	 * Setter of the property <tt>aggregationLevel</tt>
@@ -321,7 +436,69 @@ public class StationDataFile extends DataFile {
 	 * @uml.property  name="aggregationLevel"
 	 */
 	public void setAggregationLevel(String aggregationLevel) {
-		this.aggregationLevel = aggregationLevel;
-	}
+        this.aggregationLevel = aggregationLevel;
+    }
+    /**
+     * @uml.property  name="station"
+     * @uml.associationEnd  multiplicity="(1 1)" inverse="stationDataFile:jacky.util.stations.Station"
+     */
+    private Station station = new jacky.util.stations.Station();
+
+    /**
+     * Getter of the property <tt>station</tt>
+     * @return  Returns the station.
+     * @uml.property  name="station"
+     */
+    public Station getStation() {
+        return station;
+    }
+
+    /**
+     * Setter of the property <tt>station</tt>
+     * @param station  The station to set.
+     * @uml.property  name="station"
+     */
+    public void setStation(Station station) {
+        this.station = station;
+    }
+    /**
+     * Header of the station data file (i.e. the meaning of the columns).
+     * @uml.property  name="header"
+     */
+    private String header = new java.lang.String();
+
+    /**
+     * Getter of the property <tt>header</tt>
+     * @return  Returns the header.
+     * @uml.property  name="header"
+     */
+    public String getHeader() {
+        return header;
+    }
+
+    /**
+     * Setter of the property <tt>header</tt>
+     * @param header  The header to set.
+     * @uml.property  name="header"
+     */
+    public void setHeader(String header) {
+        this.header = header;
+    }
+
+    	
+    		
+        		
+            	/** 
+                 * Implements the respective method of the StationDataFilesToController interface. This method writes a station data set to a csv file following the level 0005 processing definitions of the research group.
+                 */
+            	public void writeLevel0005(){
+            	}
+
+            	
+            	/**
+            	 * Implements the respective method of the StationDataFilesToController interface. This method writes a station data set to a csv file following the level 0050 processing definitions of the research group.
+            	 */
+            	public void writeLevel0050(){
+            	}
 
 }

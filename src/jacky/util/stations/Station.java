@@ -33,6 +33,8 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Iterator;
 
+import jacky.util.datafiles.stationdatafiles.StationDataFile;
+
 
 /**
  */
@@ -54,8 +56,8 @@ public class Station {
 	 * @uml.property  name="stationID"
 	 */
 	public String getStationID() {
-		return stationID;
-	}
+        return stationID;
+    }
 
 	/**
 	 * Setter of the property <tt>stationID</tt>
@@ -63,13 +65,62 @@ public class Station {
 	 * @uml.property  name="stationID"
 	 */
 	public void setStationID(String stationID) {
-		this.stationID = stationID;
-	}
+        this.stationID = stationID;
+    }
 	/**
-	 * Date/time where the station/primary logger/sensor has been installed.
-	 * @uml.property   name="installationDateTime"
-	 */
-	private Calendar installationDateTime = new java.util.Calendar();
+     * Date/time where the station/primary logger/sensor has been installed.
+     * @uml.property   name="installationDateTime"
+     */
+	private Calendar installationDateTime = new Calendar() {
+        
+        @Override
+        public void roll(int field, boolean up) {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public int getMinimum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getMaximum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getLeastMaximum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getGreatestMinimum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        protected void computeTime() {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        protected void computeFields() {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public void add(int field, int amount) {
+            // TODO Auto-generated method stub
+            
+        }
+    };
 
 	/** 
 	 * Getter of the property <tt>installationDateTime</tt>
@@ -77,8 +128,8 @@ public class Station {
 	 * @uml.property  name="installationDateTime"
 	 */
 	public Calendar getInstallationDateTime() {
-		return installationDateTime;
-	}
+        return installationDateTime;
+    }
 
 	/** 
 	 * Setter of the property <tt>installationDateTime</tt>
@@ -86,14 +137,63 @@ public class Station {
 	 * @uml.property  name="installationDateTime"
 	 */
 	public void setInstallationDateTime(Calendar installationDateTime) {
-		this.installationDateTime = installationDateTime;
-	}
+        this.installationDateTime = installationDateTime;
+    }
 
 	/**
-	 * Date/time where the station/primary logger has been uninstalled. If the station is still running, the date will be in the future.
-	 * @uml.property   name="uninstallationDateTime"
-	 */
-	private Calendar uninstallationDateTime = new java.util.Calendar();
+     * Date/time where the station/primary logger has been uninstalled. If the station is still running, the date will be in the future.
+     * @uml.property   name="uninstallationDateTime"
+     */
+	private Calendar uninstallationDateTime = new Calendar() {
+        
+        @Override
+        public void roll(int field, boolean up) {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public int getMinimum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getMaximum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getLeastMaximum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        public int getGreatestMinimum(int field) {
+            // TODO Auto-generated method stub
+            return 0;
+        }
+        
+        @Override
+        protected void computeTime() {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        protected void computeFields() {
+            // TODO Auto-generated method stub
+            
+        }
+        
+        @Override
+        public void add(int field, int amount) {
+            // TODO Auto-generated method stub
+            
+        }
+    };
 
 	/** 
 	 * Getter of the property <tt>uninstallationDateTime</tt>
@@ -101,8 +201,8 @@ public class Station {
 	 * @uml.property  name="uninstallationDateTime"
 	 */
 	public Calendar getUninstallationDateTime() {
-		return uninstallationDateTime;
-	}
+        return uninstallationDateTime;
+    }
 
 	/** 
 	 * Setter of the property <tt>uninstallationDateTime</tt>
@@ -110,8 +210,8 @@ public class Station {
 	 * @uml.property  name="uninstallationDateTime"
 	 */
 	public void setUninstallationDateTime(Calendar uninstallationDateTime) {
-		this.uninstallationDateTime = uninstallationDateTime;
-	}
+        this.uninstallationDateTime = uninstallationDateTime;
+    }
 
 	/**
 	 * Identifier of the location (plot) where the station is installed/the data has been collected.
@@ -125,8 +225,8 @@ public class Station {
 	 * @uml.property  name="plotID"
 	 */
 	public String getPlotID() {
-		return plotID;
-	}
+        return plotID;
+    }
 
 	/**
 	 * Setter of the property <tt>plotID</tt>
@@ -134,13 +234,13 @@ public class Station {
 	 * @uml.property  name="plotID"
 	 */
 	public void setPlotID(String plotID) {
-		this.plotID = plotID;
-	}
+        this.plotID = plotID;
+    }
 
 	/**
-	 * @uml.property   name="stationSensor"
-	 * @uml.associationEnd   multiplicity="(1 -1)" inverse="station:jacky.util.stations.Sensor"
-	 */
+     * @uml.property   name="stationSensor"
+     * @uml.associationEnd   multiplicity="(1 -1)" inverse="station:jacky.util.stations.Sensor"
+     */
 	private Collection stationSensor;
 
 	/**
@@ -149,8 +249,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public Collection getStationSensor() {
-		return stationSensor;
-	}
+        return stationSensor;
+    }
 
 	/**
 	 * Returns an iterator over the elements in this collection. 
@@ -159,8 +259,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public Iterator stationSensorIterator() {
-		return stationSensor.iterator();
-	}
+        return stationSensor.iterator();
+    }
 
 	/**
 	 * Returns <tt>true</tt> if this collection contains no elements.
@@ -169,8 +269,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public boolean isStationSensorEmpty() {
-		return stationSensor.isEmpty();
-	}
+        return stationSensor.isEmpty();
+    }
 
 	/**
 	 * Returns <tt>true</tt> if this collection contains the specified element. 
@@ -179,8 +279,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public boolean containsStationSensor(Sensor stationSensor) {
-		return this.stationSensor.contains(stationSensor);
-	}
+        return this.stationSensor.contains(stationSensor);
+    }
 
 	/**
 	 * Returns <tt>true</tt> if this collection contains all of the elements in the specified collection.
@@ -189,8 +289,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public boolean containsAllStationSensor(Collection stationSensor) {
-		return this.stationSensor.containsAll(stationSensor);
-	}
+        return this.stationSensor.containsAll(stationSensor);
+    }
 
 	/**
 	 * Returns the number of elements in this collection.
@@ -199,8 +299,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public int stationSensorSize() {
-		return stationSensor.size();
-	}
+        return stationSensor.size();
+    }
 
 	/**
 	 * Returns all elements of this collection in an array.
@@ -209,8 +309,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public Sensor[] stationSensorToArray() {
-		return (Sensor[]) stationSensor.toArray(new Sensor[stationSensor.size()]);
-	}
+        return (Sensor[]) stationSensor.toArray(new Sensor[stationSensor.size()]);
+    }
 
 	/**
 	 * Returns an array containing all of the elements in this collection;  the runtime type of the returned array is that of the specified array.
@@ -220,8 +320,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public Sensor[] stationSensorToArray(Sensor[] stationSensor) {
-		return (Sensor[]) this.stationSensor.toArray(stationSensor);
-	}
+        return (Sensor[]) this.stationSensor.toArray(stationSensor);
+    }
 
 	/**
 	 * Ensures that this collection contains the specified element (optional operation). 
@@ -230,8 +330,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public boolean addStationSensor(Sensor stationSensor) {
-		return this.stationSensor.add(stationSensor);
-	}
+        return this.stationSensor.add(stationSensor);
+    }
 
 	/**
 	 * Setter of the property <tt>stationSensor</tt>
@@ -239,8 +339,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public void setStationSensor(Collection stationSensor) {
-		this.stationSensor = stationSensor;
-	}
+        this.stationSensor = stationSensor;
+    }
 
 	/**
 	 * Removes a single instance of the specified element from this collection, if it is present (optional operation).
@@ -249,8 +349,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public boolean removeStationSensor(Sensor stationSensor) {
-		return this.stationSensor.remove(stationSensor);
-	}
+        return this.stationSensor.remove(stationSensor);
+    }
 
 	/**
 	 * Removes all of the elements from this collection (optional operation).
@@ -258,8 +358,8 @@ public class Station {
 	 * @uml.property  name="stationSensor"
 	 */
 	public void clearStationSensor() {
-		this.stationSensor.clear();
-	}
+        this.stationSensor.clear();
+    }
 
 	/**
 	 * Serial number of the station. This is generally the serial number of the primariy data logger.
@@ -273,8 +373,8 @@ public class Station {
 	 * @uml.property  name="serialNumber"
 	 */
 	public String getSerialNumber() {
-		return serialNumber;
-	}
+        return serialNumber;
+    }
 
 	/** 
 	 * Setter of the property <tt>stationSerialNumber</tt>
@@ -282,7 +382,133 @@ public class Station {
 	 * @uml.property  name="serialNumber"
 	 */
 	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-	}
+        this.serialNumber = serialNumber;
+    }
+
+    /**
+     * @uml.property   name="stationDataFile"
+     * @uml.associationEnd   multiplicity="(0 -1)" inverse="station:jacky.util.datafiles.stationdatafiles.StationDataFile"
+     */
+    private Collection stationDataFile = new java.util.ArrayList();
+
+    /**
+     * Getter of the property <tt>stationDataFile</tt>
+     * @return  Returns the stationDataFile.
+     * @uml.property  name="stationDataFile"
+     */
+    public Collection getStationDataFile() {
+        return stationDataFile;
+    }
+
+    /**
+     * Returns an iterator over the elements in this collection. 
+     * @return  an <tt>Iterator</tt> over the elements in this collection
+     * @see java.util.Collection#iterator()
+     * @uml.property  name="stationDataFile"
+     */
+    public Iterator stationDataFileIterator() {
+        return stationDataFile.iterator();
+    }
+
+    /**
+     * Returns <tt>true</tt> if this collection contains no elements.
+     * @return  <tt>true</tt> if this collection contains no elements
+     * @see java.util.Collection#isEmpty()
+     * @uml.property  name="stationDataFile"
+     */
+    public boolean isStationDataFileEmpty() {
+        return stationDataFile.isEmpty();
+    }
+
+    /**
+     * Returns <tt>true</tt> if this collection contains the specified element. 
+     * @param element  whose presence in this collection is to be tested.
+     * @see java.util.Collection#contains(Object)
+     * @uml.property  name="stationDataFile"
+     */
+    public boolean containsStationDataFile(StationDataFile stationDataFile) {
+        return this.stationDataFile.contains(stationDataFile);
+    }
+
+    /**
+     * Returns <tt>true</tt> if this collection contains all of the elements in the specified collection.
+     * @param elements  collection to be checked for containment in this collection.
+     * @see java.util.Collection#containsAll(Collection)
+     * @uml.property  name="stationDataFile"
+     */
+    public boolean containsAllStationDataFile(Collection stationDataFile) {
+        return this.stationDataFile.containsAll(stationDataFile);
+    }
+
+    /**
+     * Returns the number of elements in this collection.
+     * @return  the number of elements in this collection
+     * @see java.util.Collection#size()
+     * @uml.property  name="stationDataFile"
+     */
+    public int stationDataFileSize() {
+        return stationDataFile.size();
+    }
+
+    /**
+     * Returns all elements of this collection in an array.
+     * @return  an array containing all of the elements in this collection
+     * @see java.util.Collection#toArray()
+     * @uml.property  name="stationDataFile"
+     */
+    public StationDataFile[] stationDataFileToArray() {
+        return (StationDataFile[]) stationDataFile
+                .toArray(new StationDataFile[stationDataFile.size()]);
+    }
+
+    /**
+     * Returns an array containing all of the elements in this collection;  the runtime type of the returned array is that of the specified array.
+     * @param a  the array into which the elements of this collection are to be stored.
+     * @return  an array containing all of the elements in this collection
+     * @see java.util.Collection#toArray(Object[])
+     * @uml.property  name="stationDataFile"
+     */
+    public StationDataFile[] stationDataFileToArray(
+            StationDataFile[] stationDataFile) {
+                return (StationDataFile[]) this.stationDataFile.toArray(stationDataFile);
+            }
+
+    /**
+     * Ensures that this collection contains the specified element (optional operation). 
+     * @param element  whose presence in this collection is to be ensured.
+     * @see java.util.Collection#add(Object)
+     * @uml.property  name="stationDataFile"
+     */
+    public boolean addStationDataFile(StationDataFile stationDataFile) {
+        return this.stationDataFile.add(stationDataFile);
+    }
+
+    /**
+     * Setter of the property <tt>stationDataFile</tt>
+     * @param stationDataFile  the stationDataFile to set.
+     * @uml.property  name="stationDataFile"
+     */
+    public void setStationDataFile(Collection stationDataFile) {
+        this.stationDataFile = stationDataFile;
+    }
+
+    /**
+     * Removes a single instance of the specified element from this collection, if it is present (optional operation).
+     * @param element  to be removed from this collection, if present.
+     * @see java.util.Collection#add(Object)
+     * @uml.property  name="stationDataFile"
+     */
+    public boolean removeStationDataFile(StationDataFile stationDataFile) {
+        return this.stationDataFile.remove(stationDataFile);
+    }
+
+    /**
+     * Removes all of the elements from this collection (optional operation).
+     * @see java.util.Collection#clear()
+     * @uml.property  name="stationDataFile"
+     */
+    public void clearStationDataFile() {
+        this.stationDataFile.clear();
+    }
 
 }
