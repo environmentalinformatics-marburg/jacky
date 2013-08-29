@@ -1,28 +1,32 @@
-/* jacky: Utilities for climate station data sets.
-
-Copyright (C) 2013-2013 Thomas Nauss, Spaska Forteva
-                        Environmental Informatics
-                        University of Marburg
-                        Germany
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Please send any comments, suggestions, criticism, or (for our sake) bug
-reports to nausst@googlemail.com
-
-    http://environmentalinformatics-marburg.de
+/*
+ * @(#)jacky: Utilities for climate station data sets.
+ * 
+ * Copyright (C) 2013-2013 Thomas Nauss, Spaska Forteva
+ *         				   Environmental Informatics
+ *                         University of Marburg
+ *                         Germany
+ * 
+ * This file is part of jacky.
+ * 
+ * jacky is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * jacky is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with jacky.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Please send any comments, suggestions, criticism, or (for our sake) bug
+ * reports to nausst@googlemail.com
+ * 
+ * http://environmentalinformatics-marburg.de
  */
+
 package jacky.util.datafiles;
 
 import java.util.Calendar;
@@ -177,10 +181,6 @@ public class StationDataFile extends DataFile {
 	public void setProjectID(String projectID) {
 		this.projectID = projectID;
 	}
-	/**
-	 * Installation date of the station/primary logger which ID is given by the stationSerialNumber.
-	 * @uml.property  name="installationDateTime"
-	 */
 
 	/** 
 	 * Setter of the property <tt>endDateTime</tt>
@@ -276,29 +276,6 @@ public class StationDataFile extends DataFile {
 	 */
 	public void setFirstDataLine(int firstDataLine) {
 		this.firstDataLine = firstDataLine;
-	}
-	/** 
-	 * Station which collected the data set.
-	 * @uml.property name="station"
-	 */
-	private Station station = new jacky.util.stations.Station();
-
-	/** 
-	 * Getter of the property <tt>station</tt>
-	 * @return  Returns the station.
-	 * @uml.property  name="station"
-	 */
-	public Station getStation() {
-		return station;
-	}
-
-	/** 
-	 * Setter of the property <tt>station</tt>
-	 * @param station  The station to set.
-	 * @uml.property  name="station"
-	 */
-	public void setStation(Station station) {
-		this.station = station;
 	}
 	/**
 	 * Additional identifier of the process level which is derived from the file name conventions of some working groups at Marburg University.
