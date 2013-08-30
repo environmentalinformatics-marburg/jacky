@@ -40,12 +40,18 @@ public class Sensor {
 
 
 	
-	/** 
-	 * Sensor attached to a station.
-	 */
-	public Sensor(){
-		// TODO Auto-generated constructor stub
-	}
+		
+    		
+        		
+            	/** 
+                 * This class represents an environmental monitoring sensor which is generally attached to a station.
+                 */
+            	public Sensor(){
+            	
+            	        	
+            	        	    	
+            	        	    			// TODO Auto-generated constructor stub
+            	        	    		   }
 
 	/** 
 	 * Calibration coefficient(s) of the sensor.

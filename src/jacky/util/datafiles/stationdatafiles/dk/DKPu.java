@@ -42,7 +42,15 @@ public class DKPu extends DK implements StationDataFilesToController {
     	public void calibrateData(){
     	
     	        // TODO Auto-generated method stub
-    	
+            System.out.println("I am Pu");
+
     	     }
+
+        	
+        	/**
+        	 * This class represents a Driesen and Kern PU logger with one or two impulse inputs which can (but do not have to be) connected to tipping buck rain gauges or similar equipment.
+        	 */
+        	public DKPu(){
+        	}
 
 }

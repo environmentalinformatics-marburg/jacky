@@ -45,4 +45,11 @@ public class DKRad extends DK implements StationDataFilesToController {
     	
     	     }
 
+        	
+        	/**
+        	 * This class represents a Driesen and Kern RAD logger with two voltage inputs which can (but do not have to be) attached to radiation sensors.
+        	 */
+        	public DKRad(){
+        	}
+
 }

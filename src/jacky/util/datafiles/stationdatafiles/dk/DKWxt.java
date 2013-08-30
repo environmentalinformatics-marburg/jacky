@@ -45,4 +45,11 @@ public class DKWxt extends DK implements StationDataFilesToController {
     	
     	     }
 
+        	
+        	/**
+        	 * This class represents a Driesen and Kern logger connected to a Vaisalla WXT station with one built in air temperature, one air humidity, one air pressure, one 2D ultrasonic anemometer and one rainfall sensor. Additional sensors can be attached.
+        	 */
+        	public DKWxt(){
+        	}
+
 }

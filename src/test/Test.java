@@ -27,6 +27,7 @@
 
 package test;
 import jacky.util.datafiles.stationdatafiles.StationDataFile;
+import jacky.util.datafiles.stationdatafiles.StationDataFilesToController;
 import jacky.util.datafiles.stationdatafiles.dk.DKRug;
 import jacky.util.stations.Sensor;
 import jacky.util.stations.Station;
@@ -54,30 +55,15 @@ public class Test {
      * @param args
      */
     public static void main(String[] args) {
-        List<String> l = new ArrayList<String>();
-        l.add("Hallo");
-        l.add("Spaska");
-        System.out.println(l.indexOf("Spaska"));
-        System.out.println(l.toString());
-        List<String> l1 = new LinkedList<String>();
-        l1.add("Hallo1");
-        l1.add("Spaksa1");
-        System.out.println(l1.indexOf("Spaska1"));
-        System.out.println(l1.toString());
-        
-        String classname = "jacky.util.datafiles.stationdatafiles.dk.DKRug";
-        Class myclass = null;
+
+        StationDataFilesToController station = null; 
+        String classname = "jacky.util.datafiles.stationdatafiles.dk.DKPu";
         try {
-            myclass = Class.forName(classname);
+            Class<?> stationClass = Class.forName(classname);
+            station = (StationDataFilesToController) stationClass.newInstance();
         } catch (ClassNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-        System.out.println("Klasse: " + myclass);
-        
-        Object mystation = null;
-        try {
-            mystation = myclass.newInstance();
         } catch (InstantiationException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -85,47 +71,46 @@ public class Test {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        Method[] methods = myclass.getMethods();
-        System.out.println("Objekt: " + mystation.getClass());
+        station.calibrateData();
         
-        
-        
-        DKRug rug = new DKRug(); 
-        System.out.println(rug.getTimeInterval());
-        rug.setStation(new Station());
-        rug.getStation().setPlotID("0000gra1");
-        System.out.println(rug.getStation().getPlotID());
-        Map<String,Sensor> sensor = new HashMap<String, Sensor>();
-        sensor.put("ta200", new Sensor());
-        sensor.put("rh200", new Sensor());
-        /*
-         * List<Sensor> sensor = new ArrayList<Sensor>();
-         *         rug.getStation().addSensor(new Sensor());
-        rug.getStation().addSensor(new Sensor());
-        */
-        rug.getStation().setSensor(sensor);
-        rug.getStation().getSensor().containsKey("ta200");
-        rug.getStation().getSensor().put("wd", new Sensor());
-        rug.getStation().addSensor("wv", new Sensor());
-        System.out.println(rug.getStation().isSensorEmpty());
-        System.out.println(rug.getStation().sensorSize());
-        System.out.println(rug.getStation().getSensor().get("ta200"));
-        rug.getStation().getSensor().get("ta200").setSerialNumber("ta200-01");
-        rug.getStation().getSensor().get("wv").setSerialNumber("wv-01");
-        Iterator iterator = rug.getStation().getSensor().keySet().iterator();
-        while(iterator.hasNext()){
-            Object key = iterator.next();
-            Sensor sen = rug.getStation().getSensor().get(key);
-            System.out.println(key);
-            System.out.println(sen.getSerialNumber());
-        }
-        
-        
-    }
-
-    private static Class Class() {
-        // TODO Auto-generated method stub
-        return null;
     }
 
 }
+
+/*
+List<String> l = new ArrayList<String>();
+l.add("Hallo");
+l.add("Spaska");
+System.out.println(l.indexOf("Spaska"));
+System.out.println(l.toString());
+List<String> l1 = new LinkedList<String>();
+l1.add("Hallo1");
+l1.add("Spaksa1");
+System.out.println(l1.indexOf("Spaska1"));
+System.out.println(l1.toString());
+DKRug rug = new DKRug(); 
+System.out.println(rug.getTimeInterval());
+rug.setStation(new Station());
+rug.getStation().setPlotID("0000gra1");
+System.out.println(rug.getStation().getPlotID());
+Map<String,Sensor> sensor = new HashMap<String, Sensor>();
+sensor.put("ta200", new Sensor());
+sensor.put("rh200", new Sensor());
+rug.getStation().setSensor(sensor);
+rug.getStation().getSensor().containsKey("ta200");
+rug.getStation().getSensor().put("wd", new Sensor());
+rug.getStation().addSensor("wv", new Sensor());
+System.out.println(rug.getStation().isSensorEmpty());
+System.out.println(rug.getStation().sensorSize());
+System.out.println(rug.getStation().getSensor().get("ta200"));
+rug.getStation().getSensor().get("ta200").setSerialNumber("ta200-01");
+rug.getStation().getSensor().get("wv").setSerialNumber("wv-01");
+Iterator iterator = rug.getStation().getSensor().keySet().iterator();
+while(iterator.hasNext()){
+    Object key = iterator.next();
+    Sensor sen = rug.getStation().getSensor().get(key);
+    System.out.println(key);
+    System.out.println(sen.getSerialNumber());
+}
+
+*/

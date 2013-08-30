@@ -33,16 +33,19 @@ import jacky.util.datafiles.stationdatafiles.StationDataFilesToController;
  * @author tnauss
  */
 public class DKRug extends DK implements StationDataFilesToController {
-    /**
-     */
-    public DKRug(){
-    }
+    	
+    	/** 
+         * This class represents a Driesen and Kern RUG logger with one air temperature and one air humidity sensor.
+         */
+    	public DKRug(){
+    	}
 
     	
    	/** 
      * Implements the respective method of the StationDataFilesToController interface. This method calibrates those data set parameters which have no physical meaning in the sense of environmental sciences (e. g. convert voltage to soil moisture).
      */
    	public void calibrateData(){
+   	    System.out.println("I am Rug");
    	}
    	
 }

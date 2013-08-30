@@ -28,7 +28,7 @@
 package jacky.util.datafiles.stationdatafiles;
 
 /** 
- * @author tnauss
+ * This interface provides relevant methods for the handling and automatic processing of station data files.
  */
 public interface StationDataFilesToController {
 

@@ -31,7 +31,6 @@ package jacky.util.datafiles;
 
 /** 
  * This class provides basic meta information for data files.
- * 
  * @version 0.1 2013-08-28
  * @author tnauss
  */
@@ -57,8 +56,8 @@ public abstract class DataFile {
 	 * @uml.property  name="filename"
 	 */
 	public String getFilename() {
-		return filename;
-	}
+        return filename;
+    }
 
 	/** 
 	 * Setter of the property <tt>filename</tt>
@@ -66,8 +65,8 @@ public abstract class DataFile {
 	 * @uml.property  name="filename"
 	 */
 	public void setFilename(String filename) {
-		this.filename = filename;
-	}
+        this.filename = filename;
+    }
 
 	/** 
 	 * Full path and name of the data file.
@@ -81,8 +80,8 @@ public abstract class DataFile {
 	 * @uml.property  name="filepath"
 	 */
 	public String getFilepath() {
-		return filepath;
-	}
+        return filepath;
+    }
 
 	/** 
 	 * Setter of the property <tt>filepath</tt>
@@ -90,8 +89,8 @@ public abstract class DataFile {
 	 * @uml.property  name="filepath"
 	 */
 	public void setFilepath(String filepath) {
-		this.filepath = filepath;
-	}
+        this.filepath = filepath;
+    }
 
 	/** 
 	 * Extension of the data file.
@@ -105,8 +104,8 @@ public abstract class DataFile {
 	 * @uml.property  name="extension"
 	 */
 	public String getExtension() {
-		return extension;
-	}
+        return extension;
+    }
 
 	/** 
 	 * Setter of the property <tt>extension</tt>
@@ -114,8 +113,8 @@ public abstract class DataFile {
 	 * @uml.property  name="extension"
 	 */
 	public void setExtension(String extension) {
-		this.extension = extension;
-	}
+        this.extension = extension;
+    }
 
 	/** 
 	 * Path of the data file.
@@ -129,8 +128,8 @@ public abstract class DataFile {
 	 * @uml.property  name="path"
 	 */
 	public String getPath() {
-		return path;
-	}
+        return path;
+    }
 
 	/** 
 	 * Setter of the property <tt>path</tt>
@@ -138,8 +137,8 @@ public abstract class DataFile {
 	 * @uml.property  name="path"
 	 */
 	public void setPath(String path) {
-		this.path = path;
-	}
+        this.path = path;
+    }
 
 	/**
 	 * Post-extension of the file which follows the actual file extension (e. g. *.txt.processed).
@@ -153,8 +152,8 @@ public abstract class DataFile {
 	 * @uml.property  name="postExtension"
 	 */
 	public String getPostExtension() {
-		return postExtension;
-	}
+        return postExtension;
+    }
 
 	/**
 	 * Setter of the property <tt>postExtension</tt>
@@ -162,8 +161,8 @@ public abstract class DataFile {
 	 * @uml.property  name="postExtension"
 	 */
 	public void setPostExtension(String postExtension) {
-		this.postExtension = postExtension;
-	}
+        this.postExtension = postExtension;
+    }
 
 	/**
 	 * Type of the data file.
@@ -177,8 +176,8 @@ public abstract class DataFile {
 	 * @uml.property  name="filetype"
 	 */
 	public String getFiletype() {
-		return filetype;
-	}
+        return filetype;
+    }
 
 	/**
 	 * Setter of the property <tt>filetype</tt>
@@ -186,7 +185,7 @@ public abstract class DataFile {
 	 * @uml.property  name="filetype"
 	 */
 	public void setFiletype(String filetype) {
-		this.filetype = filetype;
-	}
+        this.filetype = filetype;
+    }
 
 }

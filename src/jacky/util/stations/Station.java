@@ -39,9 +39,14 @@ import java.util.Map;
  */
 public class Station {
 
-	public Station() {
-		// TODO Auto-generated constructor stub
-	}
+		
+    	/** 
+         * This class represents an environmental monitoring station.
+         */
+    	public Station(){
+    	
+    			// TODO Auto-generated constructor stub
+    		 }
 
 	/**plotID
 	 * Identifier of the station (coded).

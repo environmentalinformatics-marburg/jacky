@@ -29,14 +29,19 @@
 
 package jacky.util.datafiles.stationdatafiles;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
 import jacky.util.datafiles.DataFile;
 import jacky.util.stations.Station;
+import java.util.List;
+import String;
 
 /** 
+ * This class provides general methods for station data files.
+ * @version 0.1 2013-08-28
  * @author tnauss
  */
 public abstract class StationDataFile extends DataFile implements StationDataFilesToController {
@@ -178,54 +183,6 @@ public abstract class StationDataFile extends DataFile implements StationDataFil
     }
 	
 	/**
-	 * Number of lines of the station data file header.
-	 * @uml.property  name="headerExtension"
-	 */
-	private int headerExtension = 0;
-
-	/**
-	 * Getter of the property <tt>headerExtension</tt>
-	 * @return  Returns the headerExtension.
-	 * @uml.property  name="headerExtension"
-	 */
-	public int getHeaderExtension() {
-        return headerExtension;
-    }
-
-	/**
-	 * Setter of the property <tt>headerExtension</tt>
-	 * @param headerExtension  The headerExtension to set.
-	 * @uml.property  name="headerExtension"
-	 */
-	public void setHeaderExtension(int headerExtension) {
-        this.headerExtension = headerExtension;
-    }
-	
-	/** 
-     * Number of the line which gives the column header information (only relevant for table-style files).
-     * @uml.property name="headerLine"
-     */
-	private int headerLine = 0;
-
-	/** 
-     * Getter of the property <tt>headerLine</tt>
-     * @return  Returns the headerLine.
-     * @uml.property  name="headerLine"
-     */
-	public int getHeaderLine() {
-        return headerLine;
-    }
-
-	/** 
-     * Setter of the property <tt>headerLine</tt>
-     * @param headerLine  The headerLine to set.
-     * @uml.property  name="headerLine"
-     */
-	public void setHeaderLine(int headerLine) {
-        this.headerLine = headerLine;
-    }
-	
-	/**
 	 * Number of the first line of data.
 	 * @uml.property  name="firstDataLine"
 	 */
@@ -321,31 +278,7 @@ public abstract class StationDataFile extends DataFile implements StationDataFil
         this.station = station;
     }
     
-    /**
-     * Header of the station data file (i.e. the meaning of the columns).
-     * @uml.property  name="header"
-     */
-    private String header = new java.lang.String();
-
-    /**
-     * Getter of the property <tt>header</tt>
-     * @return  Returns the header.
-     * @uml.property  name="header"
-     */
-    public String getHeader() {
-        return header;
-    }
-
-    /**
-     * Setter of the property <tt>header</tt>
-     * @param header  The header to set.
-     * @uml.property  name="header"
-     */
-    public void setHeader(String header) {
-        this.header = header;
-    }
-        		
-	/** 
+    /** 
      * Implements the respective method of the StationDataFilesToController interface. This method writes a station data set to a csv file following the level 0005 processing definitions of the research group.
      */
 	public void writeLevel0005(){
@@ -405,5 +338,127 @@ public abstract class StationDataFile extends DataFile implements StationDataFil
     public void setEndDateTime(Calendar endDateTime) {
         this.endDateTime = endDateTime;
     }
+
+    /** 
+     * Data section of the station data file (i.e. everything within dataSectionLines).
+     * @uml.property name="dataSection"
+     */
+    private List<String> dataSection = new java.util.ArrayList<String>();
+
+    /** 
+     * Getter of the property <tt>data</tt>
+     * @return  Returns the data.
+     * @uml.property  name="dataSection"
+     */
+    public List<String> getDataSection() {
+        return dataSection;
+    }
+
+    /** 
+     * Setter of the property <tt>data</tt>
+     * @param data  The data to set.
+     * @uml.property  name="dataSection"
+     */
+    public void setDataSection(List<String> dataSection) {
+        this.dataSection = dataSection;
+    }
+
+    /** 
+     * Entire header information of the station data file as defined by headerExtension.
+     * @uml.property name="headerSection"
+     */
+    private List<String> headerSection = new ArrayList<String>();
+
+    /** 
+     * Getter of the property <tt>header</tt>
+     * @return  Returns the header.
+     * @uml.property  name="headerSection"
+     */
+    public List<String> getHeaderSection() {
+        return headerSection;
+    }
+
+    /** 
+     * Setter of the property <tt>header</tt>
+     * @param header  The header to set.
+     * @uml.property  name="headerSection"
+     */
+    public void setHeaderSection(List<String> headerSection) {
+        this.headerSection = headerSection;
+    }
+
+    /**
+     * Number of lines of the station data file header.
+     * @uml.property  name="headerExtension"
+     */
+    private int headerExtension = 0;
+
+    /** 
+     * Getter of the property <tt>headerExtension</tt>
+     * @return  Returns the headerExtension.
+     * @uml.property  name="headerExtension"
+     */
+    public int getHeaderExtension() {
+        return headerExtension;
+    }
+
+    /** 
+     * Setter of the property <tt>headerExtension</tt>
+     * @param headerExtension  The headerExtension to set.
+     * @uml.property  name="headerExtension"
+     */
+    public void setHeaderExtension(int headerExtension) {
+        this.headerExtension = headerExtension;
+    }
+
+    /** 
+     * Column header which defines the meaning of the data columns.
+     * @uml.property name="dataSectionHeader"
+     */
+    private java.lang.String dataSectionHeader = "new java.lang.String()";
+
+    /** 
+     * Getter of the property <tt>columnHeader</tt>
+     * @return  Returns the columnHeader.
+     * @uml.property  name="dataSectionHeader"
+     */
+    public java.lang.String getDataSectionHeader() {
+        return dataSectionHeader;
+    }
+
+    /** 
+     * Setter of the property <tt>columnHeader</tt>
+     * @param columnHeader  The columnHeader to set.
+     * @uml.property  name="dataSectionHeader"
+     */
+    public void setDataSectionHeader(java.lang.String dataSectionHeader) {
+        this.dataSectionHeader = dataSectionHeader;
+    }
+
+    /**
+     * Number of the line which gives the column header information (only relevant for table-style files).
+     * @uml.property  name="dataSectionHeaderLine"
+     */
+    private int dataSectionHeaderLine = 0;
+
+    /** 
+     * Getter of the property <tt>headerLine</tt>
+     * @return  Returns the headerLine.
+     * @uml.property  name="dataSectionHeaderLine"
+     */
+    public int getDataSectionHeaderLine() {
+        return dataSectionHeaderLine;
+    }
+
+    /** 
+     * Setter of the property <tt>headerLine</tt>
+     * @param headerLine  The headerLine to set.
+     * @uml.property  name="dataSectionHeaderLine"
+     */
+    public void setDataSectionHeaderLine(int dataSectionHeaderLine) {
+        this.dataSectionHeaderLine = dataSectionHeaderLine;
+    }
+
+
 
 }
