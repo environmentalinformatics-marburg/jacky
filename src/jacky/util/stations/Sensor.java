@@ -59,8 +59,8 @@ public class Sensor {
 	 * @uml.property  name="calibrationCoefficients"
 	 */
 	public List getCalibrationCoefficients() {
-		return calibrationCoefficients;
-	}
+        return calibrationCoefficients;
+    }
 
 	/** 
 	 * Setter of the property <tt>calibrationCoefficients</tt>
@@ -68,32 +68,8 @@ public class Sensor {
 	 * @uml.property  name="calibrationCoefficients"
 	 */
 	public void setCalibrationCoefficients(List calibrationCoefficients) {
-		this.calibrationCoefficients = calibrationCoefficients;
-	}
-
-	/**
-	 * @uml.property  name="station"
-	 * @uml.associationEnd  multiplicity="(1 1)" inverse="stationSensor:jacky.util.stations.Station"
-	 */
-	private Station station = new jacky.util.stations.Station();
-
-	/**
-	 * Getter of the property <tt>station</tt>
-	 * @return  Returns the station.
-	 * @uml.property  name="station"
-	 */
-	public Station getStation() {
-		return station;
-	}
-
-	/**
-	 * Setter of the property <tt>station</tt>
-	 * @param station  The station to set.
-	 * @uml.property  name="station"
-	 */
-	public void setStation(Station station) {
-		this.station = station;
-	}
+        this.calibrationCoefficients = calibrationCoefficients;
+    }
 
 	/**
 	 * Serial number of the sensor.
@@ -107,8 +83,8 @@ public class Sensor {
 	 * @uml.property  name="serialNumber"
 	 */
 	public String getSerialNumber() {
-		return serialNumber;
-	}
+        return serialNumber;
+    }
 
 	/**
 	 * Setter of the property <tt>serialNumber</tt>
@@ -116,7 +92,7 @@ public class Sensor {
 	 * @uml.property  name="serialNumber"
 	 */
 	public void setSerialNumber(String serialNumber) {
-		this.serialNumber = serialNumber;
-	}
+        this.serialNumber = serialNumber;
+    }
 
 }

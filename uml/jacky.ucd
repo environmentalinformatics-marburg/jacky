@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="jacky" size="1148,491" id="." metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D3130206A61636B79">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="jacky" size="1148,491" id="." metadata="uml2-1.0" initialized="true" scrolledY="141" tag="10" key="32303037303533312D3130206A61636B79">
   <children xsi:type="editmodel:PackageEditModel" name="jacky.util.datafiles" location="545,0" size="793,845" id="jacky.util.datafiles">
     <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.1/@sourceConnections.0" name="DataFile" location="27,35" size="159,148" id="jacky.util.datafiles/DataFile" runTimeClassModel="main([Ljava.lang.String;),extension,filepath,postExtension,path,filename,filetype">
       <children xsi:type="editmodel:CompartmentEditModel" size="136,108">
@@ -16,26 +16,31 @@
     </children>
     <children xsi:type="editmodel:PackageEditModel" name="jacky.util.datafiles.stationdatafiles" location="20,190" size="764,636" id="jacky.util.datafiles.stationdatafiles">
       <children xsi:type="editmodel:PackageEditModel" name="jacky.util.datafiles.stationdatafiles.dk" location="197,248" size="506,274" id="jacky.util.datafiles.stationdatafiles.dk">
-        <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.2/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.3/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.4/@sourceConnections.1" name="DK" location="25,41" size="160,104" id="jacky.util.datafiles.stationdatafiles.dk/DK" runTimeClassModel="orgHeader,setStandardHeader(),DK()">
+        <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.2/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.3/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.4/@sourceConnections.1" name="DK" location="25,41" size="160,86" id="jacky.util.datafiles.stationdatafiles.dk/DK" runTimeClassModel="orgHeader,setStandardHeader()">
           <children xsi:type="editmodel:CompartmentEditModel" size="116,18">
             <children xsi:type="editmodel:AttributeEditModel" name="orgHeader" id="jacky.util.datafiles.stationdatafiles.dk/DK#orgHeader"/>
           </children>
-          <children xsi:type="editmodel:CompartmentEditModel" size="137,36">
-            <children xsi:type="editmodel:MethodEditModel" name="DK" id="jacky.util.datafiles.stationdatafiles.dk/DK#DK()"/>
+          <children xsi:type="editmodel:CompartmentEditModel" size="137,18">
             <children xsi:type="editmodel:MethodEditModel" name="setStandardHeader" id="jacky.util.datafiles.stationdatafiles.dk/DK#setStandardHeader()"/>
           </children>
           <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
           <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles.dk/DK-Standard::Derive->jacky.util.datafiles.stationdatafiles/StationDataFile" source="//@children.0/@children.1/@children.0/@children.0" target="//@children.0/@children.1/@children.1" targetEnd="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.0/@children.2" label="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
             <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="0,52" attachSource="true"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="177,266"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="0,43" attachSource="true"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="177,257"/>
+          </sourceConnections>
+          <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles.dk/DK-Soyatec::Implement->jacky.util.datafiles.stationdatafiles/StationDataFilesToController" source="//@children.0/@children.1/@children.0/@children.0" target="//@children.0/@children.1/@children.2" targetEnd="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.1/@children.2" label="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+            <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="72,13" anchorKind="MiddlePart"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="149,0" attachSource="true"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="10,135"/>
           </sourceConnections>
           <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
         </children>
-        <children xsi:type="editmodel:ClassEditModel" name="DKRug" location="41,255" size="127,68" id="jacky.util.datafiles.stationdatafiles.dk/DKRug" runTimeClassModel="calibrateData()">
+        <children xsi:type="editmodel:ClassEditModel" name="DKRug" location="41,255" size="127,86" id="jacky.util.datafiles.stationdatafiles.dk/DKRug" runTimeClassModel="calibrateData(),DKRug()">
           <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-          <children xsi:type="editmodel:CompartmentEditModel" size="104,18">
+          <children xsi:type="editmodel:CompartmentEditModel" size="104,36">
             <children xsi:type="editmodel:MethodEditModel" name="calibrateData" id="jacky.util.datafiles.stationdatafiles.dk/DKRug#calibrateData()"/>
+            <children xsi:type="editmodel:MethodEditModel" name="DKRug" id="jacky.util.datafiles.stationdatafiles.dk/DKRug#DKRug()"/>
           </children>
           <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
           <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles.dk/DKRug-Soyatec::Implement->jacky.util.datafiles.stationdatafiles/StationDataFilesToController" source="//@children.0/@children.1/@children.0/@children.1" target="//@children.0/@children.1/@children.2" targetEnd="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.0/@children.2" label="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
@@ -46,7 +51,7 @@
           <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles.dk/DKRug-Standard::Derive->jacky.util.datafiles.stationdatafiles.dk/DK" source="//@children.0/@children.1/@children.0/@children.1" target="//@children.0/@children.1/@children.0/@children.0" targetEnd="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.1/@children.2" label="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
             <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
             <children xsi:type="editmodel:AssociationEndEditModel" location="63,0" attachSource="true"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="79,104"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="79,86"/>
           </sourceConnections>
           <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
         </children>
@@ -63,8 +68,8 @@
           </sourceConnections>
           <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles.dk/DKPu-Standard::Derive->jacky.util.datafiles.stationdatafiles.dk/DK" source="//@children.0/@children.1/@children.0/@children.2" target="//@children.0/@children.1/@children.0/@children.0" targetEnd="//@children.0/@children.1/@children.0/@children.2/@sourceConnections.1/@children.2" label="//@children.0/@children.1/@children.0/@children.2/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@children.1/@children.0/@children.2/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
             <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="9,0" attachSource="true"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="160,103"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="12,0" attachSource="true"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="145,86"/>
           </sourceConnections>
           <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
         </children>
@@ -81,8 +86,8 @@
           </sourceConnections>
           <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles.dk/DKWxt-Standard::Derive->jacky.util.datafiles.stationdatafiles.dk/DK" source="//@children.0/@children.1/@children.0/@children.3" target="//@children.0/@children.1/@children.0/@children.0" targetEnd="//@children.0/@children.1/@children.0/@children.3/@sourceConnections.1/@children.2" label="//@children.0/@children.1/@children.0/@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@children.1/@children.0/@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
             <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="0,21" attachSource="true"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="160,81"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="0,12" attachSource="true"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="160,72"/>
           </sourceConnections>
           <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
         </children>
@@ -99,17 +104,16 @@
           </sourceConnections>
           <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles.dk/DKRad-Standard::Derive->jacky.util.datafiles.stationdatafiles.dk/DK" source="//@children.0/@children.1/@children.0/@children.4" target="//@children.0/@children.1/@children.0/@children.0" targetEnd="//@children.0/@children.1/@children.0/@children.4/@sourceConnections.1/@children.2" label="//@children.0/@children.1/@children.0/@children.4/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@children.1/@children.0/@children.4/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
             <children xsi:type="editmodel:WireLabelEditModel" name="«Derive»" size="49,13" anchorKind="MiddlePart"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="35,0" attachSource="true"/>
-            <children xsi:type="editmodel:AssociationEndEditModel" location="123,104"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="36,0" attachSource="true"/>
+            <children xsi:type="editmodel:AssociationEndEditModel" location="114,86"/>
           </sourceConnections>
           <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
         </children>
         <packagePreferences xsi:type="editmodel:UMLClassDiagramPackagePreference"/>
       </children>
-      <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.0 //@children.1/@children.0/@sourceConnections.2" name="StationDataFile" location="9,75" size="177,392" id="jacky.util.datafiles.stationdatafiles/StationDataFile" runTimeClassModel="aggregationLevel,timeInterval,startDateTime,writeLevel0005(),station,writeLevel0050(),timeZone,processLevelID,endDateTime,processLevel,headerExtension,header,projectID,StationDataFile(),getEndDateTimeISO(),headerLine,getTimeIntervalISO(),firstDataLine,getStartDateTimeISO()">
+      <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.0 //@children.1/@children.0/@sourceConnections.0" name="StationDataFile" location="9,75" size="177,338" id="jacky.util.datafiles.stationdatafiles/StationDataFile" runTimeClassModel="aggregationLevel,timeInterval,startDateTime,writeLevel0005(),station,writeLevel0050(),timeZone,processLevelID,endDateTime,processLevel,headerExtension,header,projectID,headerLine,getTimeIntervalISO(),firstDataLine">
         <children xsi:type="editmodel:CompartmentEditModel" size="154,234">
           <children xsi:type="editmodel:AttributeEditModel" name="aggregationLevel" id="jacky.util.datafiles.stationdatafiles/StationDataFile#aggregationLevel"/>
-          <children xsi:type="editmodel:AttributeEditModel" name="endDateTime" id="jacky.util.datafiles.stationdatafiles/StationDataFile#endDateTime"/>
           <children xsi:type="editmodel:AttributeEditModel" name="firstDataLine" id="jacky.util.datafiles.stationdatafiles/StationDataFile#firstDataLine"/>
           <children xsi:type="editmodel:AttributeEditModel" name="header" id="jacky.util.datafiles.stationdatafiles/StationDataFile#header"/>
           <children xsi:type="editmodel:AttributeEditModel" name="headerExtension" id="jacky.util.datafiles.stationdatafiles/StationDataFile#headerExtension"/>
@@ -117,15 +121,13 @@
           <children xsi:type="editmodel:AttributeEditModel" name="processLevel" id="jacky.util.datafiles.stationdatafiles/StationDataFile#processLevel"/>
           <children xsi:type="editmodel:AttributeEditModel" name="processLevelID" id="jacky.util.datafiles.stationdatafiles/StationDataFile#processLevelID"/>
           <children xsi:type="editmodel:AttributeEditModel" name="projectID" id="jacky.util.datafiles.stationdatafiles/StationDataFile#projectID"/>
-          <children xsi:type="editmodel:AttributeEditModel" name="station" id="jacky.util.datafiles.stationdatafiles/StationDataFile@stationDataFile+jacky.util.stations/Station@station|jacky.util.stations/Station#station"/>
+          <children xsi:type="editmodel:AttributeEditModel" name="station" id="jacky.util.stations/Station@station+jacky.util.datafiles.stationdatafiles/StationDataFile@stationDataFile|jacky.util.stations/Station#station"/>
           <children xsi:type="editmodel:AttributeEditModel" name="timeInterval" id="jacky.util.datafiles.stationdatafiles/StationDataFile#timeInterval"/>
           <children xsi:type="editmodel:AttributeEditModel" name="timeZone" id="jacky.util.datafiles.stationdatafiles/StationDataFile#timeZone"/>
           <children xsi:type="editmodel:AttributeEditModel" name="startDateTime" id="jacky.util.datafiles.stationdatafiles/StationDataFile#startDateTime"/>
+          <children xsi:type="editmodel:AttributeEditModel" name="endDateTime" id="jacky.util.datafiles.stationdatafiles/StationDataFile#endDateTime"/>
         </children>
-        <children xsi:type="editmodel:CompartmentEditModel" size="145,108">
-          <children xsi:type="editmodel:MethodEditModel" name="StationDataFile" id="jacky.util.datafiles.stationdatafiles/StationDataFile#StationDataFile()"/>
-          <children xsi:type="editmodel:MethodEditModel" name="getEndDateTimeISO" id="jacky.util.datafiles.stationdatafiles/StationDataFile#getEndDateTimeISO()"/>
-          <children xsi:type="editmodel:MethodEditModel" name="getStartDateTimeISO" id="jacky.util.datafiles.stationdatafiles/StationDataFile#getStartDateTimeISO()"/>
+        <children xsi:type="editmodel:CompartmentEditModel" size="134,54">
           <children xsi:type="editmodel:MethodEditModel" name="getTimeIntervalISO" id="jacky.util.datafiles.stationdatafiles/StationDataFile#getTimeIntervalISO()"/>
           <children xsi:type="editmodel:MethodEditModel" name="writeLevel0005" id="jacky.util.datafiles.stationdatafiles/StationDataFile#writeLevel0005()"/>
           <children xsi:type="editmodel:MethodEditModel" name="writeLevel0050" id="jacky.util.datafiles.stationdatafiles/StationDataFile#writeLevel0050()"/>
@@ -136,27 +138,19 @@
           <children xsi:type="editmodel:AssociationEndEditModel" location="78,0" attachSource="true"/>
           <children xsi:type="editmodel:AssociationEndEditModel" location="80,148"/>
         </sourceConnections>
-        <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles/StationDataFile-Soyatec::Import->jacky.util.stations/Station" source="//@children.0/@children.1/@children.1" target="//@children.1/@children.0" targetEnd="//@children.0/@children.1/@children.1/@sourceConnections.1/@children.2" label="//@children.0/@children.1/@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@children.1/@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
-          <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-          <children xsi:type="editmodel:AssociationEndEditModel" location="0,136" attachSource="true"/>
-          <children xsi:type="editmodel:AssociationEndEditModel" location="226,156"/>
-        </sourceConnections>
-        <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles/StationDataFile-Soyatec::Implement->jacky.util.datafiles.stationdatafiles/StationDataFilesToController" source="//@children.0/@children.1/@children.1" target="//@children.0/@children.1/@children.2" targetEnd="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.2" label="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+        <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles/StationDataFile-Soyatec::Implement->jacky.util.datafiles.stationdatafiles/StationDataFilesToController" source="//@children.0/@children.1/@children.1" target="//@children.0/@children.1/@children.2" targetEnd="//@children.0/@children.1/@children.1/@sourceConnections.1/@children.2" label="//@children.0/@children.1/@children.1/@sourceConnections.1/@children.0" sourceEnd="//@children.0/@children.1/@children.1/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
           <children xsi:type="editmodel:WireLabelEditModel" name="«Implement»" size="72,13" anchorKind="MiddlePart"/>
           <children xsi:type="editmodel:AssociationEndEditModel" location="177,53" attachSource="true"/>
           <children xsi:type="editmodel:AssociationEndEditModel" location="0,80"/>
         </sourceConnections>
-        <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="java.util/Collection@stationDataFile+jacky.util.stations/Station@station" source="//@children.0/@children.1/@children.1" target="//@children.1/@children.0" targetEnd="//@children.0/@children.1/@children.1/@sourceConnections.3/@children.2" label="//@children.0/@children.1/@children.1/@sourceConnections.3/@children.0" sourceEnd="//@children.0/@children.1/@children.1/@sourceConnections.3/@children.1" connectionRouterKind="Manhattan">
-          <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
-          <children xsi:type="editmodel:AssociationEndEditModel" name="station" location="0,158" id="java.util/Collection@stationDataFile+jacky.util.stations/Station@station|jacky.util.stations/Station#station" attachSource="true" multiplicityLabel="//@children.0/@children.1/@children.1/@sourceConnections.3/@children.1/@children.1" roleLabel="//@children.0/@children.1/@children.1/@sourceConnections.3/@children.1/@children.0" navigable="true">
-            <children xsi:type="editmodel:LabelEditModel" name=" - station" location="519,430" size="48,13" anchorKind="FirstPart"/>
-            <children xsi:type="editmodel:LabelEditModel" name="1" location="560,403" size="7,13" anchorKind="FirstPart"/>
-          </children>
-          <children xsi:type="editmodel:AssociationEndEditModel" name="stationDataFile" location="211,158" id="java.util/Collection@stationDataFile+jacky.util.stations/Station@station|java.util/Collection#stationDataFile"/>
+        <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles/StationDataFile-Standard::Instantiate->jacky.util.stations/Station*jacky.util.datafiles.stationdatafiles/StationDataFile-Soyatec::Import->jacky.util.stations/Station" source="//@children.0/@children.1/@children.1" target="//@children.1/@children.0" targetEnd="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.2" label="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+          <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate»" size="114,13" anchorKind="MiddlePart"/>
+          <children xsi:type="editmodel:AssociationEndEditModel" location="0,5" attachSource="true"/>
+          <children xsi:type="editmodel:AssociationEndEditModel" location="211,158"/>
         </sourceConnections>
         <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
       </children>
-      <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.0 //@children.0/@children.1/@children.0/@children.2/@sourceConnections.0 //@children.0/@children.1/@children.0/@children.3/@sourceConnections.0 //@children.0/@children.1/@children.0/@children.4/@sourceConnections.0 //@children.0/@children.1/@children.1/@sourceConnections.2" name="StationDataFilesToController" location="361,48" size="259,135" id="jacky.util.datafiles.stationdatafiles/StationDataFilesToController" runTimeClassModel="calibrateData(),writeLevel0005(),setStandardHeader(),writeLevel0050()">
+      <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.0 //@children.0/@children.1/@children.0/@children.2/@sourceConnections.0 //@children.0/@children.1/@children.0/@children.3/@sourceConnections.0 //@children.0/@children.1/@children.0/@children.4/@sourceConnections.0 //@children.0/@children.1/@children.1/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.0/@sourceConnections.1" name="StationDataFilesToController" location="361,48" size="259,135" id="jacky.util.datafiles.stationdatafiles/StationDataFilesToController" runTimeClassModel="calibrateData(),writeLevel0005(),setStandardHeader(),writeLevel0050()">
         <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
         <children xsi:type="editmodel:CompartmentEditModel" size="137,72">
           <children xsi:type="editmodel:MethodEditModel" name="calibrateData" id="jacky.util.datafiles.stationdatafiles/StationDataFilesToController#calibrateData()"/>
@@ -170,8 +164,8 @@
       <packagePreferences xsi:type="editmodel:UMLClassDiagramPackagePreference"/>
     </children>
   </children>
-  <children xsi:type="editmodel:PackageEditModel" name="jacky.util.stations" location="65,20" size="257,830" id="jacky.util.stations">
-    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@children.1/@sourceConnections.0 //@children.0/@children.1/@children.1/@sourceConnections.1 //@children.0/@children.1/@children.1/@sourceConnections.3" name="Station" location="26,49" size="226,158" id="jacky.util.stations/Station" runTimeClassModel="Station(),stationSensor,installationDateTime,uninstallationDateTime,serialNumber,stationID,stationDataFile,plotID">
+  <children xsi:type="editmodel:PackageEditModel" name="jacky.util.stations" location="65,20" size="268,444" id="jacky.util.stations">
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@children.1/@sourceConnections.0 //@children.0/@children.1/@children.1/@sourceConnections.2" name="Station" location="26,49" size="226,158" id="jacky.util.stations/Station" runTimeClassModel="Station(),sensor,installationDateTime,uninstallationDateTime,serialNumber,stationID,plotID">
       <children xsi:type="editmodel:CompartmentEditModel" size="203,90">
         <children xsi:type="editmodel:AttributeEditModel" name="installationDateTime" id="jacky.util.stations/Station#installationDateTime"/>
         <children xsi:type="editmodel:AttributeEditModel" name="plotID" id="jacky.util.stations/Station#plotID"/>
@@ -183,27 +177,22 @@
         <children xsi:type="editmodel:MethodEditModel" name="Station" id="jacky.util.stations/Station#Station()"/>
       </children>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-      <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="jacky.util.stations/Station@station+java.util/Collection@stationSensor" source="//@children.1/@children.0" target="//@children.1/@children.1" targetEnd="//@children.1/@children.0/@sourceConnections.0/@children.1" label="//@children.1/@children.0/@sourceConnections.0/@children.2" sourceEnd="//@children.1/@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
-        <children xsi:type="editmodel:AssociationEndEditModel" name="station" location="109,158" id="jacky.util.stations/Station@station+java.util/Collection@stationSensor|jacky.util.stations/Station#station" attachSource="true" multiplicityLabel="//@children.1/@children.0/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.1/@children.0/@sourceConnections.0/@children.0/@children.0" navigable="true">
-          <children xsi:type="editmodel:LabelEditModel" name=" - station" location="207,234" size="48,13" anchorKind="FirstPart"/>
-          <children xsi:type="editmodel:LabelEditModel" name="1" location="186,234" size="7,13" anchorKind="FirstPart"/>
-        </children>
-        <children xsi:type="editmodel:AssociationEndEditModel" name="stationSensor" location="124,0" id="jacky.util.stations/Station@station+java.util/Collection@stationSensor|java.util/Collection#stationSensor"/>
+      <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="jacky.util.stations/Station@station+jacky.util.datafiles.stationdatafiles/StationDataFile@stationDataFile" source="//@children.1/@children.0" target="//@children.0/@children.1/@children.1" targetEnd="//@children.1/@children.0/@sourceConnections.0/@children.2" label="//@children.1/@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
         <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="station" location="226,148" id="jacky.util.stations/Station@station+jacky.util.datafiles.stationdatafiles/StationDataFile@stationDataFile|jacky.util.stations/Station#station" attachSource="true" multiplicityLabel="//@children.1/@children.0/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.1/@children.0/@sourceConnections.0/@children.1/@children.0" navigable="true">
+          <children xsi:type="editmodel:LabelEditModel" name=" - station" location="332,197" size="48,13" anchorKind="FirstPart"/>
+          <children xsi:type="editmodel:LabelEditModel" name="1" location="332,224" size="7,13" anchorKind="FirstPart"/>
+        </children>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="stationDataFile" location="10,0" id="jacky.util.stations/Station@station+jacky.util.datafiles.stationdatafiles/StationDataFile@stationDataFile|jacky.util.datafiles.stationdatafiles/StationDataFile#stationDataFile"/>
       </sourceConnections>
       <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.stations/Station-Soyatec::Import->jacky.util.stations/Sensor" source="//@children.1/@children.0" target="//@children.1/@children.1" targetEnd="//@children.1/@children.0/@sourceConnections.1/@children.2" label="//@children.1/@children.0/@sourceConnections.1/@children.0" sourceEnd="//@children.1/@children.0/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
         <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="174,158" attachSource="true"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="235,15"/>
-      </sourceConnections>
-      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.stations/Station-Soyatec::Import->jacky.util.datafiles.stationdatafiles/StationDataFile" source="//@children.1/@children.0" target="//@children.0/@children.1/@children.1" targetEnd="//@children.1/@children.0/@sourceConnections.2/@children.2" label="//@children.1/@children.0/@sourceConnections.2/@children.0" sourceEnd="//@children.1/@children.0/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
-        <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="49,13" anchorKind="MiddlePart"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="226,136" attachSource="true"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="0,116"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="79,158" attachSource="true"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" location="100,0"/>
       </sourceConnections>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
     </children>
-    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@children.0/@sourceConnections.0 //@children.1/@children.0/@sourceConnections.1" name="Sensor" location="11,482" size="235,104" id="jacky.util.stations/Sensor" runTimeClassModel="station,Sensor(),serialNumber,calibrationCoefficients">
+    <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@children.0/@sourceConnections.1" name="Sensor" location="-10,424" size="235,104" id="jacky.util.stations/Sensor" runTimeClassModel="Sensor(),serialNumber,calibrationCoefficients">
       <children xsi:type="editmodel:CompartmentEditModel" size="212,36">
         <children xsi:type="editmodel:AttributeEditModel" name="calibrationCoefficients" id="jacky.util.stations/Sensor#calibrationCoefficients"/>
         <children xsi:type="editmodel:AttributeEditModel" name="serialNumber" id="jacky.util.stations/Sensor#serialNumber"/>
@@ -212,10 +201,15 @@
         <children xsi:type="editmodel:MethodEditModel" name="Sensor" id="jacky.util.stations/Sensor#Sensor()"/>
       </children>
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
-      <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.stations/Sensor-Soyatec::Import->jacky.util.stations/Station*jacky.util.stations/Sensor-Standard::Instantiate->jacky.util.stations/Station" source="//@children.1/@children.1" target="//@children.1/@children.0" targetEnd="//@children.1/@children.1/@sourceConnections.0/@children.2" label="//@children.1/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
-        <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Import»" size="114,13" anchorKind="MiddlePart"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="104,0" attachSource="true"/>
-        <children xsi:type="editmodel:AssociationEndEditModel" location="85,158"/>
+      <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="jacky.util.stations/Sensor@sensor+jacky.util.stations/Station@station" source="//@children.1/@children.1" target="//@children.1/@children.0" targetEnd="//@children.1/@children.1/@sourceConnections.0/@children.2" label="//@children.1/@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+        <children xsi:type="editmodel:WireLabelEditModel" size="0,13" anchorKind="MiddlePart"/>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="sensor" location="135,0" id="jacky.util.stations/Sensor@sensor+jacky.util.stations/Station@station|jacky.util.stations/Sensor#sensor" attachSource="true" multiplicityLabel="//@children.1/@children.1/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.1/@children.1/@sourceConnections.0/@children.1/@children.0" navigable="true">
+          <children xsi:type="editmodel:LabelEditModel" name=" - sensor" location="215,340" size="47,13" anchorKind="FirstPart"/>
+          <children xsi:type="editmodel:LabelEditModel" name="1..*" location="183,340" size="18,13" anchorKind="FirstPart"/>
+        </children>
+        <children xsi:type="editmodel:AssociationEndEditModel" name="station" location="99,158" id="jacky.util.stations/Sensor@sensor+jacky.util.stations/Station@station|jacky.util.stations/Station#station">
+          <children xsi:type="editmodel:QualifierAttributeEditModel" name="key" location="181,223" size="34,22" id=""/>
+        </children>
       </sourceConnections>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
     </children>

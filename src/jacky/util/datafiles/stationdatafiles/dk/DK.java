@@ -37,13 +37,6 @@ import jacky.util.datafiles.stationdatafiles.StationDataFilesToController;
 public abstract class DK extends StationDataFile implements StationDataFilesToController {
 
     /**
-     * 
-     */
-    public DK() {
-        // TODO Auto-generated constructor stub
-    }
-
-    /**
      * Original header information of the station data file (i.e. the meaning of the columns). The individual header variables will be replaced by standardized variable names.
      * @uml.property  name="orgHeader"
      */

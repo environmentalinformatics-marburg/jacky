@@ -32,8 +32,7 @@ package jacky.util.stations;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Iterator;
-
-import jacky.util.datafiles.stationdatafiles.StationDataFile;
+import java.util.Map;
 
 
 /**
@@ -44,7 +43,7 @@ public class Station {
 		// TODO Auto-generated constructor stub
 	}
 
-	/**
+	/**plotID
 	 * Identifier of the station (coded).
 	 * @uml.property  name="stationID"
 	 */
@@ -238,130 +237,6 @@ public class Station {
     }
 
 	/**
-     * @uml.property   name="stationSensor"
-     * @uml.associationEnd   multiplicity="(1 -1)" inverse="station:jacky.util.stations.Sensor"
-     */
-	private Collection stationSensor;
-
-	/**
-	 * Getter of the property <tt>stationSensor</tt>
-	 * @return  Returns the stationSensor.
-	 * @uml.property  name="stationSensor"
-	 */
-	public Collection getStationSensor() {
-        return stationSensor;
-    }
-
-	/**
-	 * Returns an iterator over the elements in this collection. 
-	 * @return  an <tt>Iterator</tt> over the elements in this collection
-	 * @see java.util.Collection#iterator()
-	 * @uml.property  name="stationSensor"
-	 */
-	public Iterator stationSensorIterator() {
-        return stationSensor.iterator();
-    }
-
-	/**
-	 * Returns <tt>true</tt> if this collection contains no elements.
-	 * @return  <tt>true</tt> if this collection contains no elements
-	 * @see java.util.Collection#isEmpty()
-	 * @uml.property  name="stationSensor"
-	 */
-	public boolean isStationSensorEmpty() {
-        return stationSensor.isEmpty();
-    }
-
-	/**
-	 * Returns <tt>true</tt> if this collection contains the specified element. 
-	 * @param element  whose presence in this collection is to be tested.
-	 * @see java.util.Collection#contains(Object)
-	 * @uml.property  name="stationSensor"
-	 */
-	public boolean containsStationSensor(Sensor stationSensor) {
-        return this.stationSensor.contains(stationSensor);
-    }
-
-	/**
-	 * Returns <tt>true</tt> if this collection contains all of the elements in the specified collection.
-	 * @param elements  collection to be checked for containment in this collection.
-	 * @see java.util.Collection#containsAll(Collection)
-	 * @uml.property  name="stationSensor"
-	 */
-	public boolean containsAllStationSensor(Collection stationSensor) {
-        return this.stationSensor.containsAll(stationSensor);
-    }
-
-	/**
-	 * Returns the number of elements in this collection.
-	 * @return  the number of elements in this collection
-	 * @see java.util.Collection#size()
-	 * @uml.property  name="stationSensor"
-	 */
-	public int stationSensorSize() {
-        return stationSensor.size();
-    }
-
-	/**
-	 * Returns all elements of this collection in an array.
-	 * @return  an array containing all of the elements in this collection
-	 * @see java.util.Collection#toArray()
-	 * @uml.property  name="stationSensor"
-	 */
-	public Sensor[] stationSensorToArray() {
-        return (Sensor[]) stationSensor.toArray(new Sensor[stationSensor.size()]);
-    }
-
-	/**
-	 * Returns an array containing all of the elements in this collection;  the runtime type of the returned array is that of the specified array.
-	 * @param a  the array into which the elements of this collection are to be stored.
-	 * @return  an array containing all of the elements in this collection
-	 * @see java.util.Collection#toArray(Object[])
-	 * @uml.property  name="stationSensor"
-	 */
-	public Sensor[] stationSensorToArray(Sensor[] stationSensor) {
-        return (Sensor[]) this.stationSensor.toArray(stationSensor);
-    }
-
-	/**
-	 * Ensures that this collection contains the specified element (optional operation). 
-	 * @param element  whose presence in this collection is to be ensured.
-	 * @see java.util.Collection#add(Object)
-	 * @uml.property  name="stationSensor"
-	 */
-	public boolean addStationSensor(Sensor stationSensor) {
-        return this.stationSensor.add(stationSensor);
-    }
-
-	/**
-	 * Setter of the property <tt>stationSensor</tt>
-	 * @param stationSensor  the stationSensor to set.
-	 * @uml.property  name="stationSensor"
-	 */
-	public void setStationSensor(Collection stationSensor) {
-        this.stationSensor = stationSensor;
-    }
-
-	/**
-	 * Removes a single instance of the specified element from this collection, if it is present (optional operation).
-	 * @param element  to be removed from this collection, if present.
-	 * @see java.util.Collection#add(Object)
-	 * @uml.property  name="stationSensor"
-	 */
-	public boolean removeStationSensor(Sensor stationSensor) {
-        return this.stationSensor.remove(stationSensor);
-    }
-
-	/**
-	 * Removes all of the elements from this collection (optional operation).
-	 * @see java.util.Collection#clear()
-	 * @uml.property  name="stationSensor"
-	 */
-	public void clearStationSensor() {
-        this.stationSensor.clear();
-    }
-
-	/**
 	 * Serial number of the station. This is generally the serial number of the primariy data logger.
 	 * @uml.property  name="serialNumber"
 	 */
@@ -385,80 +260,79 @@ public class Station {
         this.serialNumber = serialNumber;
     }
 
-    /**
-     * @uml.property   name="stationDataFile"
-     * @uml.associationEnd   multiplicity="(0 -1)" inverse="station:jacky.util.datafiles.stationdatafiles.StationDataFile"
+    /** 
+     * @uml.property name="sensor"
+     * @uml.associationEnd multiplicity="(1 -1)" inverse="station:jacky.util.stations.Sensor"
      */
-    private Collection stationDataFile = new java.util.ArrayList();
+    private Map<String, Sensor> sensor;
 
-    /**
-     * Getter of the property <tt>stationDataFile</tt>
-     * @return  Returns the stationDataFile.
-     * @uml.property  name="stationDataFile"
+    /** 
+     * Getter of the property <tt>sensor</tt>
+     * @return  Returns the sensor.
+     * @uml.property  name="sensor"
      */
-    public Collection getStationDataFile() {
-        return stationDataFile;
+    public Map<String, Sensor> getSensor() {
+        return sensor;
     }
 
     /**
      * Returns an iterator over the elements in this collection. 
      * @return  an <tt>Iterator</tt> over the elements in this collection
      * @see java.util.Collection#iterator()
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public Iterator stationDataFileIterator() {
-        return stationDataFile.iterator();
+    public Iterator sensorIterator() {
+        return sensor.keySet().iterator();
     }
 
     /**
      * Returns <tt>true</tt> if this collection contains no elements.
      * @return  <tt>true</tt> if this collection contains no elements
      * @see java.util.Collection#isEmpty()
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public boolean isStationDataFileEmpty() {
-        return stationDataFile.isEmpty();
+    public boolean isSensorEmpty() {
+        return sensor.isEmpty();
     }
 
     /**
      * Returns <tt>true</tt> if this collection contains the specified element. 
      * @param element  whose presence in this collection is to be tested.
      * @see java.util.Collection#contains(Object)
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public boolean containsStationDataFile(StationDataFile stationDataFile) {
-        return this.stationDataFile.contains(stationDataFile);
+    public boolean containsSensor(Sensor sensor) {
+        return this.sensor.containsKey(sensor);
     }
 
     /**
      * Returns <tt>true</tt> if this collection contains all of the elements in the specified collection.
      * @param elements  collection to be checked for containment in this collection.
      * @see java.util.Collection#containsAll(Collection)
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public boolean containsAllStationDataFile(Collection stationDataFile) {
-        return this.stationDataFile.containsAll(stationDataFile);
+    public boolean containsAllSensor(Map<String, Sensor> sensor) {
+        return this.sensor.containsKey(sensor);
     }
 
     /**
      * Returns the number of elements in this collection.
      * @return  the number of elements in this collection
      * @see java.util.Collection#size()
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public int stationDataFileSize() {
-        return stationDataFile.size();
+    public int sensorSize() {
+        return sensor.size();
     }
 
     /**
      * Returns all elements of this collection in an array.
      * @return  an array containing all of the elements in this collection
      * @see java.util.Collection#toArray()
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public StationDataFile[] stationDataFileToArray() {
-        return (StationDataFile[]) stationDataFile
-                .toArray(new StationDataFile[stationDataFile.size()]);
+    public Sensor[] sensorToArray() {
+        return (Sensor[]) sensor.toArray(new Sensor[sensor.size()]);
     }
 
     /**
@@ -466,49 +340,48 @@ public class Station {
      * @param a  the array into which the elements of this collection are to be stored.
      * @return  an array containing all of the elements in this collection
      * @see java.util.Collection#toArray(Object[])
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public StationDataFile[] stationDataFileToArray(
-            StationDataFile[] stationDataFile) {
-                return (StationDataFile[]) this.stationDataFile.toArray(stationDataFile);
-            }
+    public Sensor[] sensorToArray(Sensor[] sensor) {
+        return (Sensor[]) this.sensor.toArray(sensor);
+    }
 
     /**
      * Ensures that this collection contains the specified element (optional operation). 
      * @param element  whose presence in this collection is to be ensured.
      * @see java.util.Collection#add(Object)
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public boolean addStationDataFile(StationDataFile stationDataFile) {
-        return this.stationDataFile.add(stationDataFile);
+    public boolean addSensor(String key, Sensor sensor) {
+        return this.sensor.put(key, sensor) != null;
     }
 
-    /**
-     * Setter of the property <tt>stationDataFile</tt>
-     * @param stationDataFile  the stationDataFile to set.
-     * @uml.property  name="stationDataFile"
+    /** 
+     * Setter of the property <tt>sensor</tt>
+     * @param sensor  The sensor to set.
+     * @uml.property  name="sensor"
      */
-    public void setStationDataFile(Collection stationDataFile) {
-        this.stationDataFile = stationDataFile;
+    public void setSensor(Map<String, Sensor> sensor) {
+        this.sensor = sensor;
     }
 
     /**
      * Removes a single instance of the specified element from this collection, if it is present (optional operation).
      * @param element  to be removed from this collection, if present.
      * @see java.util.Collection#add(Object)
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public boolean removeStationDataFile(StationDataFile stationDataFile) {
-        return this.stationDataFile.remove(stationDataFile);
+    public boolean removeSensor(Sensor sensor) {
+        return this.sensor.remove(sensor);
     }
 
     /**
      * Removes all of the elements from this collection (optional operation).
      * @see java.util.Collection#clear()
-     * @uml.property  name="stationDataFile"
+     * @uml.property  name="sensor"
      */
-    public void clearStationDataFile() {
-        this.stationDataFile.clear();
+    public void clearSensor() {
+        this.sensor.clear();
     }
 
 }
