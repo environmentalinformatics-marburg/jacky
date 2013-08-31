@@ -37,7 +37,6 @@ import java.util.TimeZone;
 import jacky.util.datafiles.DataFile;
 import jacky.util.stations.Station;
 import java.util.List;
-import String;
 
 /** 
  * This class provides general methods for station data files.

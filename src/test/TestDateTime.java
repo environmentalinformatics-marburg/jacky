@@ -49,7 +49,7 @@ import au.com.bytecode.opencsv.CSVReader;
  * @author tnauss
  *
  */
-public class TestCSV {
+public class TestDateTime {
     /**
      * @param args
      * @throws IOException 
@@ -57,35 +57,19 @@ public class TestCSV {
      * @throws ParseException 
      */
     public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-        csv();
+        String actDateTime = "13.04.2012 14:05:00";
+        DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+        Date startDateTime = (Date) formatter.parse(actDateTime);
+        Date[] monthlyTimeSpan = DateTime.getMonthlyTimeSpan(startDateTime);
+        long duration = 5 * 60 * 1000;
+        List<Date> dateTimeSteps = DateTime.getDateTimeSteps(monthlyTimeSpan[0], monthlyTimeSpan[1], duration);
+        System.out.println(dateTimeSteps.size());
+        System.out.println("1: " + monthlyTimeSpan[0]);
+        System.out.println("2: " + dateTimeSteps.get(0));
+        System.out.println("   " + dateTimeSteps.get(1));
+        System.out.println("   " + dateTimeSteps.get(2));
+        System.out.println("3: " + monthlyTimeSpan[1]);
+        System.out.println("4: " + dateTimeSteps.get(dateTimeSteps.size()-1));
         
     }
-
-    private static void csv() throws IOException{
-        String filepath = "/media/permanent/development/test/jacky/ki_0000mwh0_000pu2_201210151400_201212031035_mez_ra01_nai05_0000.asc";
-        
-        String[] row = null;
-        String csvFilename = "C:\\work\\sample.csv";
-         
-        CSVReader csvReader = new CSVReader(new FileReader (filepath), '\t','\'', 4);
-        String[] header = csvReader.readNext();
-        System.out.println(Arrays.toString(header));
-        System.out.println(header.length);
-        System.out.println(header[1]);
-        System.out.println(Arrays.asList(header).indexOf("Time"));
-        
-        List content = csvReader.readAll();
-        /*
-        for (Object object : content) {
-            row = (String[]) object;
-            System.out.println(row[1]);
-            Thread.sleep(2000);
-            System.out.println("HI");
-            
-        }
-        */
-        csvReader.close();
-
-    }
-    
 }
