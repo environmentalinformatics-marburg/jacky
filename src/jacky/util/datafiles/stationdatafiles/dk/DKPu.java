@@ -30,8 +30,10 @@ package jacky.util.datafiles.stationdatafiles.dk;
 import jacky.util.datafiles.stationdatafiles.StationDataFilesToController;
 
 /**
- * @author     tnauss
+ * 
  * @uml.dependency   supplier="jacky.util.datafiles.stationdatafiles.StationDataFilesToController"
+ * @version 0.1 2013-08-28
+ * @author Thomas Nauss (tnauss)
  */
 public class DKPu extends DK implements StationDataFilesToController {
 

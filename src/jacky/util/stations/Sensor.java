@@ -33,8 +33,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author tnauss
- *
+ *  
+ * @version 0.1 2013-08-28
+ * @author Thomas Nauss (tnauss)
  */
 public class Sensor {
 

@@ -43,13 +43,12 @@ import java.util.Map;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/** 
- * This class provides basic test functionality.
- * 
- * @version 0.1 2013-08-28
- * @author tnauss
- */
-public class Test {
+/**
+ * Test class for whatsoever.
+ *  
+ * @version 0.1 2013-08-31
+ * @author Thomas Nauss (tnauss)
+ */public class Test {
 
     /**
      * @param args

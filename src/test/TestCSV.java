@@ -46,8 +46,10 @@ import javax.xml.datatype.Duration;
 import au.com.bytecode.opencsv.CSVReader;
 
 /**
- * @author tnauss
- *
+ * Test class for csv operations.
+ *  
+ * @version 0.1 2013-08-31
+ * @author Thomas Nauss (tnauss)
  */
 public class TestCSV {
     /**

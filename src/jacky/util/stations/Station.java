@@ -36,6 +36,9 @@ import java.util.Map;
 
 
 /**
+ *  
+ * @version 0.1 2013-08-28
+ * @author Thomas Nauss (tnauss)
  */
 public class Station {
 

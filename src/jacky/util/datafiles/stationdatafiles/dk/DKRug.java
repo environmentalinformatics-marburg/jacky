@@ -30,7 +30,9 @@ package jacky.util.datafiles.stationdatafiles.dk;
 import jacky.util.datafiles.stationdatafiles.StationDataFilesToController;
 
 /** 
- * @author tnauss
+ *  
+ * @version 0.1 2013-08-28
+ * @author Thomas Nauss (tnauss)
  */
 public class DKRug extends DK implements StationDataFilesToController {
     	

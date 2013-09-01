@@ -33,6 +33,9 @@ import jacky.util.datafiles.stationdatafiles.StationDataFilesToController;
 
 /** 
  * This class provides more specific methods for station data files collected using loggers from Driesen and Kern.
+ *  
+ * @version 0.1 2013-08-28
+ * @author Thomas Nauss (tnauss)
  */
 public abstract class DK extends StationDataFile implements StationDataFilesToController {
 

@@ -39,15 +39,21 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.NavigableMap;
+import java.util.TreeMap;
 
 import javax.xml.crypto.Data;
 import javax.xml.datatype.Duration;
 
+import org.w3c.dom.ranges.Range;
+
 import au.com.bytecode.opencsv.CSVReader;
 
 /**
- * @author tnauss
- *
+ * Test class for date/time operations.
+ *  
+ * @version 0.1 2013-08-31
+ * @author Thomas Nauss (tnauss)
  */
 public class TestDateTime {
     /**
@@ -57,12 +63,13 @@ public class TestDateTime {
      * @throws ParseException 
      */
     public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-        String actDateTime = "13.04.2012 14:05:00";
+        String actDateTime = "01.04.2012 14:01:32";
         DateFormat formatter = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
         Date startDateTime = (Date) formatter.parse(actDateTime);
         Date[] monthlyTimeSpan = DateTime.getMonthlyTimeSpan(startDateTime);
         long duration = 5 * 60 * 1000;
-        List<Date> dateTimeSteps = DateTime.getDateTimeSteps(monthlyTimeSpan[0], monthlyTimeSpan[1], duration);
+        List<Date> dateTimeSteps = DateTime.getDateTimeStepsList(monthlyTimeSpan[0], monthlyTimeSpan[1], duration);
+        NavigableMap<Date, Date> dateTimeStepsMap = DateTime.getDateTimeStepsMap(monthlyTimeSpan[0], monthlyTimeSpan[1], duration);
         System.out.println(dateTimeSteps.size());
         System.out.println("1: " + monthlyTimeSpan[0]);
         System.out.println("2: " + dateTimeSteps.get(0));
@@ -70,6 +77,28 @@ public class TestDateTime {
         System.out.println("   " + dateTimeSteps.get(2));
         System.out.println("3: " + monthlyTimeSpan[1]);
         System.out.println("4: " + dateTimeSteps.get(dateTimeSteps.size()-1));
-        
+
+        List<Date> dateTimeList = new ArrayList<Date>();
+        Date runStartTime = new Date();
+        for (int i = 0; i < 20000; i ++) {
+            startDateTime.setTime(startDateTime.getTime() + 60 * 1000);
+            dateTimeList.add((Date) startDateTime.clone());
+            Date mapDate = DateTime.mapDate(startDateTime, dateTimeStepsMap);
+            if (i % 100 == 0) {
+                System.out.println(i + " startDateTime :" + startDateTime.toString());
+                System.out.println("  --> mapDate   :" + mapDate.toString());
+            }
+        }
+        Date runEndTime = new Date();
+        System.out.println("Start:   " + runStartTime.toString());
+        System.out.println("End:     " + runEndTime.toString());
+        System.out.println("Elapsed: " + (runEndTime.getTime() - runStartTime.getTime()));
+
+        List<Date> mapDateList = DateTime.mapDateList(dateTimeList, dateTimeStepsMap);
+        System.out.println("dateTimeList: " + dateTimeList.get(19904));
+        System.out.println("mapDateList:  " + mapDateList.get(19904));
     }
+
+    
 }
+ 

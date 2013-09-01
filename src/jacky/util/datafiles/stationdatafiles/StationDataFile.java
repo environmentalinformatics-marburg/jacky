@@ -40,8 +40,9 @@ import java.util.List;
 
 /** 
  * This class provides general methods for station data files.
+ *  
  * @version 0.1 2013-08-28
- * @author tnauss
+ * @author Thomas Nauss (tnauss)
  */
 public abstract class StationDataFile extends DataFile implements StationDataFilesToController {
 

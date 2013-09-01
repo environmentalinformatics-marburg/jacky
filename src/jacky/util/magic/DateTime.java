@@ -32,52 +32,135 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.NavigableMap;
+import java.util.TreeMap;
 
 /**
- * @author tnauss
- *
+ * This class provides useful methods for date and time handling in the context
+ * of data time series. See method descriptions for details.
+ *  
+ * @version 0.1 2013-08-31
+ * @author Thomas Nauss (tnauss)
  */
-public class DateTime {
+public abstract class DateTime {
 	/** 
-     * This method takes a date object and returns the date/time of the
-     * beginning and end of the month of this object. The time of the first day
-     * of the month is set to 00:00:00, the one of the last day is set to
-     * 23:59:59.
+     * Generates a list of date/time values between a start and end date/time 
+     * with the increment given by duration in milliseconds.
+     * This method is basically the same as {@link getDateTimeStepsMap(Date 
+     * startDateTime, Date endDateTime, long duration)  getDateTimeStepsMap}
+     * except it returns an ArrayList.
      */
-	public static Date[] getMonthlyTimeSpan(Date dateTime) 
-	    throws ParseException {
-	    Date[] monthlyTimeSpan = new Date[2];
-	    Calendar dateTimeMonth = Calendar.getInstance();
-	    dateTimeMonth.setTime(dateTime);
-	    dateTimeMonth.set(Calendar.HOUR_OF_DAY, 00);
-	    dateTimeMonth.set(Calendar.MINUTE, 00);
-	    dateTimeMonth.set(Calendar.SECOND, 00);
-	    dateTimeMonth.set(Calendar.DATE, 
-	        dateTimeMonth.getActualMinimum(Calendar.DATE));
-	    monthlyTimeSpan[0] = dateTimeMonth.getTime();
-	    dateTimeMonth.set(Calendar.HOUR_OF_DAY, 23);
-	    dateTimeMonth.set(Calendar.MINUTE, 59);
-	    dateTimeMonth.set(Calendar.DATE, 
-	        dateTimeMonth.getActualMaximum(Calendar.DATE));
-	    monthlyTimeSpan[1] = dateTimeMonth.getTime();
-	    return monthlyTimeSpan;
-	}
-	
-    /** 
-     * This method generates a list of date/time values between a start and
-     * end date/time with the increment given by duration in milliseconds.
-     */
-    public static List<Date> getDateTimeSteps(Date startDateTime, 
-        Date endDateTime, long duration) throws ParseException {
+    public static List<Date> getDateTimeStepsList(Date startDateTime, 
+            Date endDateTime, long duration) throws ParseException {
         List<Date> dateTimeSteps = new ArrayList<Date>();
-	    Date lastDateTimeStep = (Date) endDateTime.clone();
-	    lastDateTimeStep.setTime(lastDateTimeStep.getTime() - duration);
-	    Date timeStep = (Date) startDateTime.clone();
-	    while (lastDateTimeStep.after(timeStep)) {
-	        dateTimeSteps.add((Date) timeStep.clone()); 
-	        timeStep.setTime(timeStep.getTime() + duration);
-	    }
-	    return dateTimeSteps;
+	Date lastDateTimeStep = (Date) endDateTime.clone();
+	lastDateTimeStep.setTime(lastDateTimeStep.getTime() - duration);
+	Date timeStep = (Date) startDateTime.clone();
+	while (lastDateTimeStep.after(timeStep)) {
+	    dateTimeSteps.add((Date) timeStep.clone()); 
+	    timeStep.setTime(timeStep.getTime() + duration);
 	}
+	return dateTimeSteps;
+    }
 
+    /** 
+     * Generate a TreeMap of date/time values between a start and end date/time 
+     * with the increment given by duration in milliseconds. This method is 
+     * basically the same as {@link getDateTimeStepsList(Date startDateTime, 
+     * Date endDateTime, long duration)  getDateTimeStepsList} except it 
+     * returns a navigable map.
+     */
+    public static NavigableMap<Date, Date> getDateTimeStepsMap(
+            Date startDateTime, Date endDateTime, long duration)
+                    throws ParseException {
+	NavigableMap<Date, Date> dateTimeSteps = new TreeMap<Date, Date>();
+        Date lastDateTimeStep = (Date) endDateTime.clone();
+        lastDateTimeStep.setTime(lastDateTimeStep.getTime() - duration);
+        Date timeStep = (Date) startDateTime.clone();
+        while (lastDateTimeStep.after(timeStep)) {
+            dateTimeSteps.put((Date) timeStep.clone(), (Date) timeStep.clone()); 
+            timeStep.setTime(timeStep.getTime() + duration);
+        }
+        return dateTimeSteps;
+    }
+
+    /** 
+     * Take a date object and return the date/time of the beginning and end of 
+     * the month of this object. The time of the first day of the month is set 
+     * to 00:00:00, the one of the last day is set to 23:59:59.
+     */
+        public static Date[] getMonthlyTimeSpan(Date dateTime) 
+                throws ParseException {
+            Date[] monthlyTimeSpan = new Date[2];
+            Calendar dateTimeMonth = Calendar.getInstance();
+            dateTimeMonth.setTime(dateTime);
+            dateTimeMonth.set(Calendar.HOUR_OF_DAY, 00);
+            dateTimeMonth.set(Calendar.MINUTE, 00);
+            dateTimeMonth.set(Calendar.SECOND, 00);
+            dateTimeMonth.set(Calendar.DATE, 
+                dateTimeMonth.getActualMinimum(Calendar.DATE));
+            monthlyTimeSpan[0] = dateTimeMonth.getTime();
+            dateTimeMonth.set(Calendar.HOUR_OF_DAY, 23);
+            dateTimeMonth.set(Calendar.MINUTE, 59);
+            dateTimeMonth.set(Calendar.DATE, 
+                dateTimeMonth.getActualMaximum(Calendar.DATE));
+            monthlyTimeSpan[1] = dateTimeMonth.getTime();
+            return monthlyTimeSpan;
+        }
+
+    /** 
+     * Map a given date/time to the closest date/time given in a
+     * navigable map. One can use 
+     * {@link getDateTimeStepsMap(Date startDateTime, Date endDateTime, 
+     * long duration) getDateTimeStepsMap} to generate such a map.
+     * This method is  basically the same as {@link mapDateList(List<Date> date, 
+     * NavigableMap<Date, Date> dateTimeStepsMap)  mapDateList} except it 
+     * takes only one date to be mapped and returns only this one mapped date. 
+     */
+    public static Date mapDate(Date date, 
+	    NavigableMap<Date, Date> dateTimeStepsMap) throws ParseException {
+        Date lower = dateTimeStepsMap.floorEntry(date).getValue();
+        Date higher = dateTimeStepsMap.ceilingEntry(date).getValue();
+        Date result = null;
+        if (lower != null && higher != null) {
+            result = Math.abs(date.getTime() - lower.getTime()) < 
+                     Math.abs(date.getTime() - higher.getTime())
+            ?   lower
+            :   higher;
+        } else if (lower != null || higher != null) {
+            result = lower != null ? lower : higher;
+        }
+        return result;
+    }
+
+    /** 
+     * Map a list of given date/time to the closest date/time given in a
+     * navigable map. One can use
+     * {@link getDateTimeStepsMap(Date startDateTime, Date endDateTime, 
+     * long duration) getDateTimeStepsMap} to generate such a map. 
+     * This method is  basically the same as {@link mapDate(Date date, 
+     * NavigableMap<Date, Date> dateTimeStepsMap)  mapDate) except it 
+     * takes a list of dates and returns a list of mapped dates. 
+     */
+    public static List<Date> mapDateList(List<Date> date, 
+            NavigableMap<Date, Date> dateTimeStepsMap) throws ParseException {
+        List<Date> mapDateList = new ArrayList<Date>();
+        for (Date actDate: date) {
+            Date lower = dateTimeStepsMap.floorEntry(actDate).getValue();
+            Date higher = dateTimeStepsMap.ceilingEntry(actDate).getValue();
+            Date result = null;
+            if (lower != null && higher != null) {
+                result = Math.abs(actDate.getTime() - lower.getTime()) < 
+                        Math.abs(actDate.getTime() - higher.getTime())
+                ?   lower
+                :   higher;
+            } else if (lower != null || higher != null) {
+                result = lower != null ? lower : higher;
+            }
+            mapDateList.add(result);
+        }
+        
+        return mapDateList;
+    }
+    
 }

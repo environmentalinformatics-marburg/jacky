@@ -31,8 +31,9 @@ package jacky.util.datafiles;
 
 /** 
  * This class provides basic meta information for data files.
- * @version 0.1 2013-08-28
- * @author tnauss
+ *  
+ * @version 0.1 2013-08-31
+ * @author Thomas Nauss (tnauss)
  */
 public abstract class DataFile {
 
