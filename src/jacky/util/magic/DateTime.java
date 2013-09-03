@@ -56,7 +56,8 @@ public abstract class DateTime {
 	Date lastDateTimeStep = (Date) endDateTime.clone();
 	//lastDateTimeStep.setTime(lastDateTimeStep.getTime() - duration);
 	Date timeStep = (Date) startDateTime.clone();
-	while (lastDateTimeStep.after(timeStep)) {
+        while ((lastDateTimeStep.after(timeStep)) || 
+                (lastDateTimeStep.equals(timeStep))) {
 	    dateTimeSteps.add((Date) timeStep.clone()); 
 	    timeStep.setTime(timeStep.getTime() + duration);
 	}
@@ -80,7 +81,8 @@ public abstract class DateTime {
         Date lastDateTimeStep = (Date) endDateTime.clone();
         //lastDateTimeStep.setTime(lastDateTimeStep.getTime() - duration);
         Date timeStep = (Date) startDateTime.clone();
-        while (lastDateTimeStep.after(timeStep)) {
+        while ((lastDateTimeStep.after(timeStep)) || 
+                (lastDateTimeStep.equals(timeStep))) {
             dateTimeSteps.put((Date) timeStep.clone(), (Date) timeStep.clone()); 
             timeStep.setTime(timeStep.getTime() + duration);
         }
@@ -103,10 +105,10 @@ public abstract class DateTime {
         NavigableMap<Date, Long> dateTimeSteps = new TreeMap<Date, Long>();
         Date lastDateTimeStep = (Date) endDateTime.clone();
         //lastDateTimeStep.setTime(lastDateTimeStep.getTime() - duration);
-        System.out.println("HALLO: " + lastDateTimeStep.toString());
         Date timeStep = (Date) startDateTime.clone();
         long index = 0;
-        while (lastDateTimeStep.after(timeStep)) {
+        while ((lastDateTimeStep.after(timeStep)) || 
+                (lastDateTimeStep.equals(timeStep))) {
             dateTimeSteps.put((Date) timeStep.clone(), index); 
             timeStep.setTime(timeStep.getTime() + duration);
             index++;
@@ -150,16 +152,19 @@ public abstract class DateTime {
      */
     public static Date mapDate(Date date, 
 	    NavigableMap<Date, Date> dateTimeStepsMap) throws ParseException {
-        Date lower = dateTimeStepsMap.floorEntry(date).getValue();
-        Date higher = dateTimeStepsMap.ceilingEntry(date).getValue();
         Date result = null;
-        if (lower != null && higher != null) {
-            result = Math.abs(date.getTime() - lower.getTime()) < 
-                     Math.abs(date.getTime() - higher.getTime())
-            ?   lower
-            :   higher;
-        } else if (lower != null || higher != null) {
-            result = lower != null ? lower : higher;
+        if (!(date.after((Date) dateTimeStepsMap.firstKey())) ||
+                !(date.before((Date) dateTimeStepsMap.lastKey()))) {
+            Date lower = dateTimeStepsMap.floorEntry(date).getValue();
+            Date higher = dateTimeStepsMap.ceilingEntry(date).getValue();
+            if (lower != null && higher != null) {
+                result = Math.abs(date.getTime() - lower.getTime()) < 
+                         Math.abs(date.getTime() - higher.getTime())
+                ?   lower
+                :   higher;
+            } else if (lower != null || higher != null) {
+                result = lower != null ? lower : higher;
+            }
         }
         return result;
     }
@@ -182,18 +187,23 @@ public abstract class DateTime {
             NavigableMap<Date, Date> dateTimeStepsMap) throws ParseException {
         List<Date> mapDateListToDate = new ArrayList<Date>();
         for (Date actDate: date) {
-            Date lower = dateTimeStepsMap.floorEntry(actDate).getValue();
-            Date higher = dateTimeStepsMap.ceilingEntry(actDate).getValue();
-            Date result = null;
-            if (lower != null && higher != null) {
-                result = Math.abs(actDate.getTime() - lower.getTime()) < 
-                        Math.abs(actDate.getTime() - higher.getTime())
-                ?   lower
-                :   higher;
-            } else if (lower != null || higher != null) {
-                result = lower != null ? lower : higher;
+            if (actDate.before((Date) dateTimeStepsMap.firstKey()) ||
+                    actDate.after((Date) dateTimeStepsMap.lastKey())) {
+                continue;
+            } else {
+                Date lower = dateTimeStepsMap.floorEntry(actDate).getValue();
+                Date higher = dateTimeStepsMap.ceilingEntry(actDate).getValue();
+                Date result = null;
+                if (lower != null && higher != null) {
+                    result = Math.abs(actDate.getTime() - lower.getTime()) < 
+                            Math.abs(actDate.getTime() - higher.getTime())
+                    ?   lower
+                    :   higher;
+                } else if (lower != null || higher != null) {
+                    result = lower != null ? lower : higher;
+                }
+                mapDateListToDate.add(result);
             }
-            mapDateListToDate.add(result);
         }
         return mapDateListToDate;
     }
@@ -220,19 +230,24 @@ public abstract class DateTime {
         List<Long> mapDateListToIndex = new ArrayList<Long>();
         long result = -1;
         for (Date actDate: date) {
-            Date lower = dateTimeStepsMap.floorEntry(actDate).getKey();
-            Date higher = dateTimeStepsMap.ceilingEntry(actDate).getKey();
-            if (lower != null && higher != null) {
-                result = Math.abs(actDate.getTime() - lower.getTime()) < 
-                        Math.abs(actDate.getTime() - higher.getTime())
-                ?   dateTimeStepsMap.get(lower)
-                :   dateTimeStepsMap.get(higher);
-            } else if (lower != null || higher != null) {
-                result = lower != null 
+            if (actDate.before((Date) dateTimeStepsMap.firstKey()) ||
+                    actDate.after((Date) dateTimeStepsMap.lastKey())) {
+                continue;
+            } else {
+                Date lower = dateTimeStepsMap.floorEntry(actDate).getKey();
+                Date higher = dateTimeStepsMap.ceilingEntry(actDate).getKey();
+                if (lower != null && higher != null) {
+                    result = Math.abs(actDate.getTime() - lower.getTime()) < 
+                            Math.abs(actDate.getTime() - higher.getTime())
+                    ?   dateTimeStepsMap.get(lower)
+                    :   dateTimeStepsMap.get(higher);
+                } else if (lower != null || higher != null) {
+                    result = lower != null 
                         ? dateTimeStepsMap.get(lower) 
                         : dateTimeStepsMap.get(higher);
+                }
+                mapDateListToIndex.add(result);
             }
-            mapDateListToIndex.add(result);
         }
         return mapDateListToIndex;
     }

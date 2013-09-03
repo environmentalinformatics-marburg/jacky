@@ -29,6 +29,9 @@
 
 package jacky.util.datafiles.stationdatafiles;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,6 +40,8 @@ import java.util.TimeZone;
 import jacky.util.datafiles.DataFile;
 import jacky.util.stations.Station;
 import java.util.List;
+
+import au.com.bytecode.opencsv.CSVReader;
 
 /** 
  * This class provides general methods for station data files.
@@ -458,6 +463,26 @@ public abstract class StationDataFile extends DataFile implements StationDataFil
     public void setDataSectionHeaderLine(int dataSectionHeaderLine) {
         this.dataSectionHeaderLine = dataSectionHeaderLine;
     }
+
+    	
+    	/**
+    	 * Read the content of the station data file (i.e. the column header and
+    	 * the data lines).
+    	 * @throws IOException 
+    	 */
+    	public static Object[] readStationDataFileContent(String filepath)
+    	        throws IOException{
+    	    Object[] fileContent = new Object[2];
+    	    CSVReader csvReader = new CSVReader(
+                    new FileReader (filepath), '\t','\'', 4);
+    	    fileContent[0] = csvReader.readNext();
+    	    fileContent[1] = csvReader.readAll();
+            csvReader.close();
+            //fileContent[0] = header;
+            //fileContent[1] = content;
+            return fileContent;
+
+    	}
 
 
 
