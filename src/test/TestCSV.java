@@ -27,6 +27,8 @@
 
 package test;
 
+import jacky.util.datafiles.stationdatafiles.StationDataFile;
+import jacky.util.datafiles.stationdatafiles.dk.DKPu;
 import jacky.util.magic.DateTime;
 
 import java.io.BufferedOutputStream;
@@ -66,22 +68,26 @@ public class TestCSV {
      * @throws ParseException 
      */
     public static void main(String[] args) throws IOException, InterruptedException, ParseException {
-        csv();
+        TestCSV testCSV = new TestCSV();
+        testCSV.csv();
         
     }
 
-    private static void csv() throws IOException, ParseException, InterruptedException{
+    private void csv() throws IOException, ParseException, InterruptedException{
         boolean print = false;
         
         String filepath = "/media/permanent/development/test/jacky/ki_0000mwh0_000pu2_201210151400_201212031035_mez_ra01_nai05_0000.asc";
         String outfilepath = "/media/permanent/development/test/jacky/ki_0000mwh0_000pu2_out.asc";
 
         Date runStartTime = new Date();
-
-        Object[] fileContent = jacky.util.datafiles.stationdatafiles.StationDataFile.readStationDataFileContent(filepath);
-        String[] header = (String[]) fileContent[0];        
-        List<String[]> content = (List<String[]>) fileContent[1];        
-        System.out.println(content.getClass());
+        Date runStartReadTime = new Date();
+        DKPu dkPu = new DKPu();
+        dkPu.setDataSectionHeaderLine(4);
+        dkPu.setDelimiter('\t');
+        dkPu.readStationDataFileContent(filepath);
+        String[] header = dkPu.getDataSectionHeader();        
+        List<String[]> content = dkPu.getDataSectionContent();        
+        Date runEndReadTime = new Date();
         
         if (print) {
             System.out.println("Header");
@@ -148,7 +154,8 @@ public class TestCSV {
             System.out.println("mapDateIndexList:  " + mapDateIndexList.get(99));
             System.out.println("dateArray: " + dateArray[mapDateIndexList.get(99).intValue()]);
         }
-        
+
+        Date runStartWriteTime = new Date();
         int version = 3; // maybe best option is option 3
         if (version == 1) {
             System.out.println("V1 - csvWriter.writeNext(); String.valueOf");
@@ -231,11 +238,31 @@ public class TestCSV {
             }
             fileWriter.close();
     }
+        Date runEndWriteTime = new Date();
         Date runEndTime = new Date();
-        System.out.println("Start:   " + runStartTime.toString());
-        System.out.println("End:     " + runEndTime.toString());
-        System.out.println("Elapsed: " + (runEndTime.getTime() - runStartTime.getTime()));
+        System.out.println();
+        System.out.println("Start:    " + runStartTime.toString());
+        System.out.println("End:      " + runEndTime.toString());
+        System.out.println("Elapsed:  " + (runEndTime.getTime() - runStartTime.getTime()));
         
+        System.out.println();
+        System.out.println("StartR:   " + runStartReadTime.toString());
+        System.out.println("EndR:     " + runEndReadTime.toString());
+        System.out.println("ElapsedR: " + (runEndReadTime.getTime() - runStartReadTime.getTime()));
+
+        System.out.println();
+        System.out.println("StartW:   " + runStartWriteTime.toString());
+        System.out.println("EndW:     " + runEndWriteTime.toString());
+        System.out.println("ElapsedW: " + (runEndWriteTime.getTime() - runStartWriteTime.getTime()));
+        
+        System.out.println();
+        System.out.println("I/O:      " + ((runEndReadTime.getTime() - runStartReadTime.getTime()) +
+                (runEndWriteTime.getTime() - runStartWriteTime.getTime())));
+        
+        System.out.println("calc:      " + ((runEndTime.getTime() - runStartTime.getTime()) -
+                (runEndReadTime.getTime() - runStartReadTime.getTime()) -
+                (runEndWriteTime.getTime() - runStartWriteTime.getTime())));
+
         /*
         Object[] finalDataSetArray = (Object[]) finalDataSet.toArray();
         System.out.println();

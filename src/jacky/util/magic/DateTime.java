@@ -150,7 +150,7 @@ public abstract class DateTime {
      * NavigableMap<Date, Date> dateTimeStepsMap)  mapDateList} except it 
      * takes only one date to be mapped and returns only this one mapped date. 
      */
-    public static Date mapDate(Date date, 
+    public static Date mapSingleDateToDate(Date date, 
 	    NavigableMap<Date, Date> dateTimeStepsMap) throws ParseException {
         Date result = null;
         if (!(date.after((Date) dateTimeStepsMap.firstKey())) ||
@@ -174,9 +174,9 @@ public abstract class DateTime {
      * navigable map. One can use
      * {@link getDateTimeStepsMap(Date startDateTime, Date endDateTime, 
      * long duration) getDateTimeStepsMap} to generate such a map. 
-     * This method is similar to {@link mapDate(Date date, 
-     * NavigableMap<Date, Date> dateTimeStepsMap)  mapDate) except it 
-     * takes a list of dates and returns a list of mapped dates. 
+     * This method is similar to {@link mapSingleDateToDate(Date date, 
+     * NavigableMap<Date, Date> dateTimeStepsMap)  mapSingleDateToDate) except 
+     * it takes a list of dates and returns a list of mapped dates. 
      * This method is quite identical to {@link mapDateListToIndex(List<Date> 
      * date, NavigableMap<Date, Long> dateTimeStepsMap) mapDateListToIndex)
      * except it returns a list of date objects which equal the respective 
@@ -213,9 +213,9 @@ public abstract class DateTime {
      * navigable map. One can use
      * {@link getDateTimeStepsMap(Date startDateTime, Date endDateTime, 
      * long duration) getDateTimeStepsMap} to generate such a map. 
-     * This method is similar to {@link mapDate(Date date, 
-     * NavigableMap<Date, Date> dateTimeStepsMap)  mapDate) except it 
-     * takes a list of dates and returns a list of mapped dates. 
+     * This method is similar to {@link mapSingleDateToDate(Date date, 
+     * NavigableMap<Date, Date> dateTimeStepsMap)  mapSingleDateToDate) except 
+     * it takes a list of dates and returns a list of mapped dates. 
      * This method is quite identical to {@link mapDateListToDate(List<Date> 
      * date, NavigableMap<Date, Date> dateTimeStepsMap) mapDateListToDate)
      * except it returns a list of the index values of the respective date/time
@@ -250,6 +250,14 @@ public abstract class DateTime {
             }
         }
         return mapDateListToIndex;
+    }
+
+    	
+    /**
+     * Return date/time as ISO string.
+     */
+    public String getDateTimeISO(Date dateTime){
+            return "";      
     }
 
 }
