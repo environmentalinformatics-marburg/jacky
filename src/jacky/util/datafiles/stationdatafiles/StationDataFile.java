@@ -151,7 +151,7 @@ public abstract class StationDataFile extends DataFile implements StationDataFil
      * Number of the first line of data.
      * @uml.property  name="firstDataLine"
      */
-    private int firstDataLine = 0;
+    private int firstDataLine = this.getDataSectionHeaderLine() + 1;
 
     /**
      * Getter of the property <tt>firstDataLine</tt>
@@ -370,7 +370,7 @@ public abstract class StationDataFile extends DataFile implements StationDataFil
     }
 
     /**
-     * Number of the line which gives the column header information (only relevant for table-style files).
+     * Number of the line which gives the column header information. 
      * @uml.property  name="dataSectionHeaderLine"
      */
     private int dataSectionHeaderLine = 0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="jacky" size="1148,491" id="." metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D3130206A61636B79">
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="jacky" size="1148,491" id="." metadata="uml2-1.0" initialized="true" scrolledY="54" tag="10" key="32303037303533312D3130206A61636B79">
   <children xsi:type="editmodel:PackageEditModel" name="jacky.util.datafiles" location="540,0" size="997,766" id="jacky.util.datafiles">
     <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.1/@sourceConnections.0" name="DataFile" location="27,35" size="159,148" id="jacky.util.datafiles/DataFile" runTimeClassModel="main([Ljava.lang.String;),extension,filepath,postExtension,path,filename,filetype">
       <children xsi:type="editmodel:CompartmentEditModel" size="136,108">
@@ -14,7 +14,7 @@
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
     </children>
-    <children xsi:type="editmodel:PackageEditModel" name="jacky.util.datafiles.stationdatafiles" location="0,190" size="715,457" id="jacky.util.datafiles.stationdatafiles">
+    <children xsi:type="editmodel:PackageEditModel" name="jacky.util.datafiles.stationdatafiles" location="0,190" size="715,467" id="jacky.util.datafiles.stationdatafiles">
       <children xsi:type="editmodel:PackageEditModel" name="jacky.util.datafiles.stationdatafiles.dk" location="262,109" size="446,260" id="jacky.util.datafiles.stationdatafiles.dk">
         <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.1/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.2/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.3/@sourceConnections.1 //@children.0/@children.1/@children.0/@children.4/@sourceConnections.1" name="DK" location="25,41" size="180,86" id="jacky.util.datafiles.stationdatafiles.dk/DK" runTimeClassModel="orgColumnHeader,setStandardHeader()">
           <children xsi:type="editmodel:CompartmentEditModel" size="157,18">
@@ -114,7 +114,7 @@
         </children>
         <packagePreferences xsi:type="editmodel:UMLClassDiagramPackagePreference"/>
       </children>
-      <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.0 //@children.1/@children.0/@sourceConnections.0" name="StationDataFile" location="9,75" size="227,392" id="jacky.util.datafiles.stationdatafiles/StationDataFile" runTimeClassModel="aggregationLevel,timeInterval,startDateTime,readStationDataFileContent(Ljava.lang.String;),writeLevel0005(),station,writeLevel0050(),dataSectionHeaderLine,timeZone,processLevelID,endDateTime,dataSectionHeader,processLevel,headerExtension,delimiter,projectID,setDataSectionContent(Ljava.util.List;),quoter,headerSection,dataSectionContent,firstDataLine">
+      <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@children.1/@children.0/@children.0/@sourceConnections.0 //@children.1/@children.0/@sourceConnections.0" name="StationDataFile" location="9,75" size="227,392" id="jacky.util.datafiles.stationdatafiles/StationDataFile" runTimeClassModel="aggregationLevel,timeInterval,startDateTime,readStationDataFileContent(Ljava.lang.String;),writeLevel0005(),station,writeLevel0050(),dataSectionHeaderLine,timeZone,processLevelID,endDateTime,dataSectionHeader,processLevel,headerExtension,delimiter,projectID,setDataSectionContent(Ljava.util.List;),headerSection,quoter,dataSectionContent,firstDataLine">
         <children xsi:type="editmodel:CompartmentEditModel" size="204,288">
           <children xsi:type="editmodel:AttributeEditModel" name="aggregationLevel" id="jacky.util.datafiles.stationdatafiles/StationDataFile#aggregationLevel"/>
           <children xsi:type="editmodel:AttributeEditModel" name="firstDataLine" location="14,88" id="jacky.util.datafiles.stationdatafiles/StationDataFile#firstDataLine"/>
@@ -150,7 +150,7 @@
           <children xsi:type="editmodel:AssociationEndEditModel" location="0,81"/>
         </sourceConnections>
         <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="jacky.util.datafiles.stationdatafiles/StationDataFile-Soyatec::Import->jacky.util.stations/Station*jacky.util.datafiles.stationdatafiles/StationDataFile-Standard::Instantiate->jacky.util.stations/Station" source="//@children.0/@children.1/@children.1" target="//@children.1/@children.0" targetEnd="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.2" label="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.0" sourceEnd="//@children.0/@children.1/@children.1/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
-          <children xsi:type="editmodel:WireLabelEditModel" name="«Instantiate, Import»" size="114,13" anchorKind="MiddlePart"/>
+          <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Instantiate»" size="114,13" anchorKind="MiddlePart"/>
           <children xsi:type="editmodel:AssociationEndEditModel" location="0,5" attachSource="true"/>
           <children xsi:type="editmodel:AssociationEndEditModel" location="211,158"/>
         </sourceConnections>
@@ -220,8 +220,8 @@
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
     </children>
   </children>
-  <children xsi:type="editmodel:PackageEditModel" name="jacky.util.magic" location="45,555" size="224,197" id="jacky.util.magic">
-    <children xsi:type="editmodel:ClassEditModel" name="DateTime" location="87,80" size="208,194" id="jacky.util.magic/DateTime" runTimeClassModel="mapSingleDateToDate(Ljava.util.Date;Ljava.util.NavigableMap;),getDateTimeISO(Ljava.util.Date;),getDateTimeStepsMap(Ljava.util.Date;Ljava.util.Date;J),getDateTimeStepsList(Ljava.util.Date;Ljava.util.Date;J),getMonthlyTimeSpan(Ljava.util.Date;),getDateTimeStepsIndexMap(Ljava.util.Date;Ljava.util.Date;J),mapDateListToDate(Ljava.util.List;Ljava.util.NavigableMap;),mapDateListToIndex(Ljava.util.List;Ljava.util.NavigableMap;)">
+  <children xsi:type="editmodel:PackageEditModel" name="jacky.util.magic" location="45,555" size="224,215" id="jacky.util.magic">
+    <children xsi:type="editmodel:ClassEditModel" name="DateTime" location="87,80" size="208,194" id="jacky.util.magic/DateTime" runTimeClassModel="getDateTimeISO(Ljava.util.Date;),mapSingleDateToDate(Ljava.util.Date;Ljava.util.NavigableMap;),getDateTimeStepsMap(Ljava.util.Date;Ljava.util.Date;J),getDateTimeStepsList(Ljava.util.Date;Ljava.util.Date;J),getMonthlyTimeSpan(Ljava.util.Date;),getDateTimeStepsIndexMap(Ljava.util.Date;Ljava.util.Date;J),mapDateListToDate(Ljava.util.List;Ljava.util.NavigableMap;),mapDateListToIndex(Ljava.util.List;Ljava.util.NavigableMap;)">
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <children xsi:type="editmodel:CompartmentEditModel" size="185,144">
         <children xsi:type="editmodel:MethodEditModel" name="getMonthlyTimeSpan" id="jacky.util.magic/DateTime#getMonthlyTimeSpan(Ljava.util.Date;)"/>
@@ -236,6 +236,21 @@
       <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
       <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
     </children>
+  </children>
+  <children xsi:type="editmodel:PackageEditModel" name="jacky.util.meta" location="330,570" size="191,181" id="jacky.util.meta">
+    <children xsi:type="editmodel:ClassEditModel" name="ConfigFile" location="19,42" size="160,122" id="jacky.util.meta/ConfigFile" runTimeClassModel="clone,getInstance(Ljava.lang.String;),ConfigFile(Ljava.lang.String;),properties,instance">
+      <children xsi:type="editmodel:CompartmentEditModel" size="137,54">
+        <children xsi:type="editmodel:AttributeEditModel" name="clone" id="jacky.util.meta/ConfigFile#clone"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="instance" id="jacky.util.meta/ConfigFile#instance"/>
+        <children xsi:type="editmodel:AttributeEditModel" name="properties" id="jacky.util.meta/ConfigFile#properties"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="83,18">
+        <children xsi:type="editmodel:MethodEditModel" name="ConfigFile" id="jacky.util.meta/ConfigFile#ConfigFile(Ljava.lang.String;)"/>
+      </children>
+      <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+      <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true" showAssociationMember="true"/>
+    </children>
+    <packagePreferences xsi:type="editmodel:UMLClassDiagramPackagePreference"/>
   </children>
   <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=4;Product=eUML2;displayOptions=1"/>
   <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
